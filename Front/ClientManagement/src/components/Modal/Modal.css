@@ -1,0 +1,23 @@
+.modal-container {
+    background-color: white;
+    outline: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 1.5rem;
+    padding-bottom: 3em;
+}
+
+.text-field-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.text-field {
+    width: 80%;
+    margin: 0.5em 0 !important;
+}
