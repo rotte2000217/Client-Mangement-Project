@@ -1,20 +1,24 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Dtos/ClientSummary.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Interfaces/IUpdateClientUseCase.cs">
     <Files>
       <File FileName="Api/UseCases/ListAllClients/ListAllClients.cs" Line="15" Column="57" IsPinned="True" />
-      <File FileName="Domain/ePhoneType.cs" Line="3" Column="5" />
-      <File FileName="Domain/Phone.cs" Line="8" Column="9" />
-      <File FileName="Domain/Entities/Address.cs" Line="6" Column="9" />
-      <File FileName="Domain/Entities/Client.cs" Line="8" Column="9" />
-      <File FileName="Domain/Entities/Email.cs" Line="6" Column="9" />
-      <File FileName="Application/CreateClient/CreateClientUseCase.cs" Line="20" Column="1" />
-      <File FileName="Application/Interfaces/CreateClient/ICreateClientUseCase.cs" Line="7" Column="6" />
-      <File FileName="Application/Dtos/EmptyClass.cs" Line="25" Column="1" />
+      <File FileName="Domain/Entities/Address.cs" />
+      <File FileName="Domain/Entities/Client.cs" />
+      <File FileName="Domain/Entities/Email.cs" />
       <File FileName="Application/Dtos/EmailDto.cs" Line="9" Column="1" />
-      <File FileName="Application/Dtos/Phone.cs" Line="12" Column="1" />
-      <File FileName="Application/Dtos/ePhoneType.cs" Line="10" Column="2" />
+      <File FileName="Application/Dtos/ePhoneType.cs" />
       <File FileName="Application/Dtos/AddressDto.cs" Line="17" Column="1" />
-      <File FileName="Application/Dtos/ClientSummary.cs" Line="6" Column="9" />
+      <File FileName="Application/Dtos/ClientSummary.cs" Line="4" Column="34" />
+      <File FileName="Application/UseCases/CreateClientUseCase.cs" Line="1" Column="1" />
+      <File FileName="Application/UseCases/GetSummaryClientsUseCase.cs" Line="20" Column="1" />
+      <File FileName="Application/Interfaces/IGetSummaryClientsUseCase.cs" Line="12" Column="1" />
+      <File FileName="Application/Interfaces/ICreateClientUseCase.cs" Line="8" Column="9" />
+      <File FileName="Application/UseCases/UpdateClientUseCase.cs" Line="1" Column="1" />
+      <File FileName="Application/UseCases/DeleteClientUseCase.cs" Line="19" Column="1" />
+      <File FileName="Application/UseCases/GetDetailedClient.cs" Line="18" Column="6" />
+      <File FileName="Application/Interfaces/IGetDetailedClient.cs" Line="7" Column="40" />
+      <File FileName="Application/Interfaces/IDeleteClientUseCase.cs" Line="6" Column="42" />
+      <File FileName="Application/Interfaces/IUpdateClientUseCase.cs" Line="5" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,22 +27,16 @@
           <Node name="ClientManagement" expanded="True">
             <Node name="Core" expanded="True">
               <Node name="Application" expanded="True">
-                <Node name="Dtos" expanded="True">
-                  <Node name="ClientSummary.cs" selected="True" />
+                <Node name="Dtos" expanded="True" />
+                <Node name="Interfaces" expanded="True">
+                  <Node name="IUpdateClientUseCase.cs" selected="True" />
                 </Node>
-                <Node name="Interfaces" expanded="True" />
                 <Node name="UseCases" expanded="True" />
-              </Node>
-              <Node name="Domain" expanded="True">
-                <Node name="Entities" expanded="True" />
-                <Node name="Enums" expanded="True" />
               </Node>
             </Node>
             <Node name="Presentation" expanded="True">
               <Node name="Api" expanded="True">
-                <Node name="UseCases" expanded="True">
-                  <Node name="ListAllClients" expanded="True" />
-                </Node>
+                <Node name="UseCases" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -3,16 +3,15 @@ using System.Threading.Tasks;
 using Application.Dtos;
 using Application.Interfaces;
 
-namespace Application.CreateClient
+namespace Application.UseCases
 {
-    public class CreateClientUseCase : ICreateClientUseCase
+    public class UpdateClientUseCase: IUpdateClientUseCase
     {
-        public CreateClientUseCase()
+        public UpdateClientUseCase()
         {
-
         }
 
-        public Task<bool> CreateClient(ClientDto client)
+        public Task<bool> UpdateClient(ClientDto client)
         {
             throw new NotImplementedException();
         }

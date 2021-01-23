@@ -4,8 +4,8 @@ using Application.Dtos;
 
 namespace Application.Interfaces
 {
-    public interface ICreateClientUseCase
+    public interface IGetSummaryClientsUseCase
     {
-        Task<bool> CreateClient(ClientDto client);
+        Task<IEquatable<ClientSummaryDto>> GetClients();
     }
 }

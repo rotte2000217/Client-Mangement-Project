@@ -3,16 +3,15 @@ using System.Threading.Tasks;
 using Application.Dtos;
 using Application.Interfaces;
 
-namespace Application.CreateClient
+namespace Application.UseCases
 {
-    public class CreateClientUseCase : ICreateClientUseCase
+    public class GetDetailedClient : IGetDetailedClient
     {
-        public CreateClientUseCase()
+        public GetDetailedClient()
         {
-
         }
 
-        public Task<bool> CreateClient(ClientDto client)
+        Task<ClientDto> IGetDetailedClient.GetDetailedClient(string cpf)
         {
             throw new NotImplementedException();
         }

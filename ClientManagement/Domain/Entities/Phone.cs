@@ -1,4 +1,6 @@
 ﻿using System;
+using Domain.Enums;
+
 namespace Domain.Entities
 {
     public class Phone

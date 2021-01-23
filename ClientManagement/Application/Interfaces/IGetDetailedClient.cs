@@ -4,8 +4,8 @@ using Application.Dtos;
 
 namespace Application.Interfaces
 {
-    public interface ICreateClientUseCase
+    public interface IGetDetailedClient
     {
-        Task<bool> CreateClient(ClientDto client);
+        Task<ClientDto> GetDetailedClient(string cpf);
     }
 }
