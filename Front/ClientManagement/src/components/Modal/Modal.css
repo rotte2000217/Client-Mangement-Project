@@ -1,5 +1,5 @@
 .modal-container {
-    background-color: white;
+    background-color: #fafafa;
     outline: none !important;
     display: flex;
     flex-direction: column;
@@ -8,6 +8,8 @@
     width: 100%;
     margin: 1.5rem;
     padding-bottom: 3em;
+    max-height: 80%;
+    overflow: auto;
 }
 
 .text-field-container {
@@ -17,7 +19,57 @@
     align-items: center;
 }
 
+.label-field-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+}
+
 .text-field {
     width: 80%;
     margin: 0.5em 0 !important;
+}
+
+.additional-field {
+    padding: 1em;
+    width: 80%;
+    margin: 0.5em 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-field-full {
+    width: 100%;
+    margin-top: 1em !important;
+}
+
+.pointer-icon:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.add-icon {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    margin-top: 1em;
+}
+
+.add-icon:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.address-container {
+    padding: 1em;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em !important;
+}
+
+.address-cell-container {
+    width: 100%;
 }

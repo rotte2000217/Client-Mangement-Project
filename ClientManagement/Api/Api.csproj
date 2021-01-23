@@ -7,8 +7,13 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'ContactManager' " />
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="UseCases\" />
     <Folder Include="Properties\" />
+    <Folder Include="UseCases\ListAllClients\" />
+    <Folder Include="UseCases\GetClientDetailed\" />
+    <Folder Include="UseCases\CreateClient\" />
+    <Folder Include="UseCases\DeleteClient\" />
+    <Folder Include="UseCases\UpdateClient\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Properties\launchSettings.json" />
@@ -17,5 +22,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

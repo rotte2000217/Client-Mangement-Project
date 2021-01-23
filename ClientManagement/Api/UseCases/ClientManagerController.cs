@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -24,19 +25,21 @@ namespace ContactManager.Controllers
         {
             return "index";
         }
+        
 
-        [HttpGet]
+       [HttpGet]
         [Route("/list")]
-        public IEnumerable<ClientCardInfo> GetList()
+        public ActionResult GetList()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new ClientCardInfo
+            return Ok(Enumerable.Range(1, 5).Select(index => new ClientCardInfo
             {
                 Document = RandomString(11),
-                Mail = "felix_ruan09@hotmail.com",
+                Email = "felix_ruan09@hotmail.com",
                 Name = "Felix Ruan"
             })
-            .ToArray();
+            .ToArray());
+
         }
 
 
