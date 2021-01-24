@@ -20,5 +20,6 @@ namespace Application.Dtos
         public IEnumerable<PhoneDto> Phones { get; set; }
 
         public IEnumerable<AddressDto> Addresses { get; set; }
+
     }
 }

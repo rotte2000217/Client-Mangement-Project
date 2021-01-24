@@ -1,24 +1,12 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Interfaces/IUpdateClientUseCase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Data/ClientManagementContext.cs">
     <Files>
-      <File FileName="Api/UseCases/ListAllClients/ListAllClients.cs" Line="15" Column="57" IsPinned="True" />
-      <File FileName="Domain/Entities/Address.cs" />
-      <File FileName="Domain/Entities/Client.cs" />
-      <File FileName="Domain/Entities/Email.cs" />
-      <File FileName="Application/Dtos/EmailDto.cs" Line="9" Column="1" />
-      <File FileName="Application/Dtos/ePhoneType.cs" />
-      <File FileName="Application/Dtos/AddressDto.cs" Line="17" Column="1" />
-      <File FileName="Application/Dtos/ClientSummary.cs" Line="4" Column="34" />
-      <File FileName="Application/UseCases/CreateClientUseCase.cs" Line="1" Column="1" />
-      <File FileName="Application/UseCases/GetSummaryClientsUseCase.cs" Line="20" Column="1" />
-      <File FileName="Application/Interfaces/IGetSummaryClientsUseCase.cs" Line="12" Column="1" />
-      <File FileName="Application/Interfaces/ICreateClientUseCase.cs" Line="8" Column="9" />
-      <File FileName="Application/UseCases/UpdateClientUseCase.cs" Line="1" Column="1" />
-      <File FileName="Application/UseCases/DeleteClientUseCase.cs" Line="19" Column="1" />
-      <File FileName="Application/UseCases/GetDetailedClient.cs" Line="18" Column="6" />
-      <File FileName="Application/Interfaces/IGetDetailedClient.cs" Line="7" Column="40" />
-      <File FileName="Application/Interfaces/IDeleteClientUseCase.cs" Line="6" Column="42" />
-      <File FileName="Application/Interfaces/IUpdateClientUseCase.cs" Line="5" Column="6" />
+      <File FileName="Infrastructure/DBEntities/Phone.cs" Line="12" Column="20" />
+      <File FileName="Infrastructure/DBEntities/ePhoneType.cs" />
+      <File FileName="Infrastructure/DBEntities/Email.cs" />
+      <File FileName="Infrastructure/DBEntities/Client.cs" Line="25" Column="55" />
+      <File FileName="Infrastructure/DBEntities/Address.cs" Line="1" Column="1" />
+      <File FileName="Infrastructure/Data/ClientManagementContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,18 +14,22 @@
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
             <Node name="Core" expanded="True">
-              <Node name="Application" expanded="True">
-                <Node name="Dtos" expanded="True" />
-                <Node name="Interfaces" expanded="True">
-                  <Node name="IUpdateClientUseCase.cs" selected="True" />
+              <Node name="Application" expanded="True" />
+              <Node name="Domain" expanded="True">
+                <Node name="Entities" expanded="True" />
+                <Node name="Enums" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Infra" expanded="True">
+              <Node name="Infrastructure" expanded="True">
+                <Node name="Data" expanded="True">
+                  <Node name="ClientManagementContext.cs" selected="True" />
                 </Node>
-                <Node name="UseCases" expanded="True" />
+                <Node name="DBEntities" expanded="True" />
               </Node>
             </Node>
             <Node name="Presentation" expanded="True">
-              <Node name="Api" expanded="True">
-                <Node name="UseCases" expanded="True" />
-              </Node>
+              <Node name="Api" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -45,9 +37,8 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.ItemProperties.Core.Domain FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Core.Application FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Infra.Infrastructure FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

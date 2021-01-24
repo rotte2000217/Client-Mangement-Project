@@ -2,14 +2,18 @@
 using System.Threading.Tasks;
 using Application.Dtos;
 using Application.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace Application.CreateClient
 {
     public class CreateClientUseCase : ICreateClientUseCase
     {
-        public CreateClientUseCase()
-        {
+        private readonly ILogger<CreateClientUseCase> _logger;
 
+
+        public CreateClientUseCase(ILogger<CreateClientUseCase> logger)
+        {
+            _logger = logger;
         }
 
         public Task<bool> CreateClient(ClientDto client)

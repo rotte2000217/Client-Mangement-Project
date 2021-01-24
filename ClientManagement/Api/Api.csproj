@@ -9,11 +9,6 @@
   <ItemGroup>
     <Folder Include="UseCases\" />
     <Folder Include="Properties\" />
-    <Folder Include="UseCases\ListAllClients\" />
-    <Folder Include="UseCases\GetClientDetailed\" />
-    <Folder Include="UseCases\CreateClient\" />
-    <Folder Include="UseCases\DeleteClient\" />
-    <Folder Include="UseCases\UpdateClient\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Properties\launchSettings.json" />

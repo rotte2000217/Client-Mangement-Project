@@ -1,0 +1,3 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Debug/netstandard2.1/Application.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Debug/netstandard2.1/Application.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Debug/netstandard2.1/Application.csproj.CoreCompileInputs.cache

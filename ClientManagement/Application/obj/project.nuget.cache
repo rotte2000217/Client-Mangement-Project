@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/3IfLy5wrGLl3/bzfPNhR+xAkODRPq60VKxNkYQeO10H3aMyeP6ulctN6zc9fqgTqmUEOZ/K8AXuQ+MWrwFU4Q==",
+  "dgSpecHash": "nDE63TCxLqIrquWD/dmIK7bMPsJnGvfiYq1EXgVadvC8QLfF60PMewxXbyJtBsDfz5oSldAZdNDupaZuEleMBg==",
   "success": true,
   "projectFilePath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/felixruan/.nuget/packages/microsoft.extensions.logging.abstractions/5.0.0/microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

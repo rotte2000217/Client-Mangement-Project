@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application;
+using Application.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -32,11 +33,11 @@ namespace Api.UseCases.ListAllClients
         public ActionResult GetList()
         {
             var rng = new Random();
-            return Ok(Enumerable.Range(1, 5).Select(index => new ClientCardInfo
+            return Ok(Enumerable.Range(1, 5).Select(index => new ClientSummaryDto
             {
                 Document = RandomString(11),
-                Email = "felix_ruan09@hotmail.com",
-                Name = "Felix Ruan"
+                EmailAddress = "felix_ruan09@hotmail.com",
+                FullName = "Felix Ruan Dias Freitas"
             })
             .ToArray());
 
