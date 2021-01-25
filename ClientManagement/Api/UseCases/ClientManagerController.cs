@@ -32,13 +32,13 @@ namespace ContactManager.Controllers
         public ActionResult GetList()
         {
             var rng = new Random();
-            return Ok(Enumerable.Range(1, 5).Select(index => new ClientCardInfo
+            return null;/*Ok(Enumerable.Range(1, 5).Select(index => new ClientCardInfo
             {
                 Document = RandomString(11),
                 Email = "felix_ruan09@hotmail.com",
                 Name = "Felix Ruan"
             })
-            .ToArray());
+            .ToArray());*/
 
         }
 
