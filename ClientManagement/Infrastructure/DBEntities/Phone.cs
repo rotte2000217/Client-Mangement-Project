@@ -1,9 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Domain.Enums;
-using Infrastructure;
 
-namespace Domain.Entities
+namespace Infrastructure
 {
     public class Phone
     {

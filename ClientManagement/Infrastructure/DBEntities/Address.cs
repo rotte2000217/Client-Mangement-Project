@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Infrastructure;
 
-namespace Domain.Entities
+namespace Infrastructure
 {
     public class Address
     {

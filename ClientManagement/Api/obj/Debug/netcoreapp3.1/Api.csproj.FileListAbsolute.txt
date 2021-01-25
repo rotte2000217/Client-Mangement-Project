@@ -39,7 +39,6 @@
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/K4os.Compression.LZ4.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/K4os.Compression.LZ4.Streams.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/K4os.Hash.xxHash.dll
-/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/MySql.Data.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Ubiety.Dns.Core.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Zstandard.Net.dll
@@ -53,3 +52,6 @@
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll

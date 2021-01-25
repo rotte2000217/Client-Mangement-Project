@@ -1,0 +1,9 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csprojAssemblyReference.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.deps.json
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/bin/Debug/netstandard2.1/Infrastructure.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infrastructure.pdb

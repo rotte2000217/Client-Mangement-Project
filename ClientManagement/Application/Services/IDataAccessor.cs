@@ -3,6 +3,6 @@ namespace Application.Services
 {
     public interface IDataAccessor
     {
-        Task<C>GetAllClientsSummary();
+        void GetAllClientsSummary();
     }
 }
