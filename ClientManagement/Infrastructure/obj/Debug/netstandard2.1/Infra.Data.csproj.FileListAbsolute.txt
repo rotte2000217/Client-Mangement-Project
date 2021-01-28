@@ -1,0 +1,4 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infra.Data.csprojAssemblyReference.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infra.Data.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infra.Data.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/Debug/netstandard2.1/Infra.Data.csproj.CoreCompileInputs.cache

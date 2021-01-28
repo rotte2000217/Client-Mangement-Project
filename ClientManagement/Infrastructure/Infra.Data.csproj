@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="DBEntities\" />
     <Folder Include="Database\" />
+    <Folder Include="Configurations\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Repository\Base\" />
+    <Folder Include="Repository\UnitOfWork\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">
@@ -17,5 +19,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.11" />
     <PackageReference Include="MySql.Data" Version="8.0.23" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 </Project>

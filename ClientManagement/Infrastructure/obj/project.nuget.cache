@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wBnPak+ADPY0d77nQVSDQjfRUW18UN6Lh9cIN+17obOuZZHQ6GgvKfYfnJufKNfgyL9Zx1CYeuED7cdTKoOMKw==",
+  "dgSpecHash": "dbIQqnItUt3jXW3dbWVZQS9TKP4SWnxuP12SFUMJLI7ZH2EoTAktwLi14XwV+arPApmNYJ8s+ETDWYAUL/g1vw==",
   "success": true,
-  "projectFilePath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Infrastructure.csproj",
+  "projectFilePath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Infra.Data.csproj",
   "expectedPackageFiles": [
     "/Users/felixruan/.nuget/packages/bouncycastle.netcore/1.8.5/bouncycastle.netcore.1.8.5.nupkg.sha512",
     "/Users/felixruan/.nuget/packages/google.protobuf/3.11.4/google.protobuf.3.11.4.nupkg.sha512",

@@ -1,4 +1,6 @@
 ﻿using System;
+using Domain.entity;
+using Infra.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
@@ -11,7 +13,12 @@ namespace Infrastructure
        public DbSet<Phone> Phones { get; set; }
 
 
+       public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options): base(options) { }
 
-        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options): base(options) { }
+       protected override void OnModelCreating(ModelBuilder modelBuilder)
+       {
+
+           modelBuilder.ApplyConfiguration(new EmailConfiguration());
+       }
     }
 }

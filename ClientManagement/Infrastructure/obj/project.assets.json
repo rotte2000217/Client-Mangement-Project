@@ -532,6 +532,16 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -1683,10 +1693,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
+      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.11",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.11",
       "MySql.Data >= 8.0.23",
@@ -1699,14 +1715,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Infrastructure.csproj",
-      "projectName": "Infrastructure",
-      "projectPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Infrastructure.csproj",
+      "projectUniqueName": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Infra.Data.csproj",
+      "projectName": "Infra.Data",
+      "projectPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Infra.Data.csproj",
       "packagesPath": "/Users/felixruan/.nuget/packages/",
       "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+        "/Users/felixruan/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -1717,7 +1733,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/Domain.csproj": {
+              "projectPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
