@@ -14,7 +14,11 @@ export default class ContactModal extends React.Component {
           {
             city: "Recife",
             street: "Av manoel borba",
-            neighborhood: "Boa Vista"
+            neighborhood: "Boa Vista",
+
+            //TODO: Adds this configuration in modal
+            streetNumber: 22,
+            zipCode: 50070000,
           },
         ],
         emails:[{
@@ -22,7 +26,12 @@ export default class ContactModal extends React.Component {
           }
         ],
         phones:[{
-          phoneNumber: "81997056040"
+          phoneNumber: "81997056040",
+
+          //TODO: Adds this configuration in modal
+          countryCode: "55",
+          areaCode: "81",
+          phoneType: 1,
         }
       ],
       },
