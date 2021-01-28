@@ -1,15 +1,11 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using Infrastructure;
+﻿
+using Domain.Interfaces.Entity;
 
-namespace Infrastructure
+namespace Domain.entity
 {
-    public class Email
+    public class Email: BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
-        public Client Client { get; set; }
+        public virtual Client Client { get; set; }
 
         public int ClientId { get; set; }
 

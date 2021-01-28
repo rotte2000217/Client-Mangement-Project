@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lS/zqY8wyM8Ecm7XPDck4QSkD3eu1ry4viWBRzeZW40+hraLvSMNoYNGpfXLJG6nsWCtde0g+iwkSn8lj/QkVQ==",
+  "success": true,
+  "projectFilePath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.Commons.csproj",
+  "expectedPackageFiles": [
+    "/Users/felixruan/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

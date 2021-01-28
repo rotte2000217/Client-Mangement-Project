@@ -53,7 +53,7 @@
       "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+        "/Users/felixruan/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"

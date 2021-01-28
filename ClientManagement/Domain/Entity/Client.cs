@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using Domain.Interfaces.Entity;
 
-namespace Infrastructure
+namespace Domain.entity
 {
-    public class Client
+    public class Client: BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
         public string FullName { get; set; }
 
         public string Document { get; set; }

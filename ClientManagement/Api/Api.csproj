@@ -22,7 +22,7 @@
     <ProjectReference Include="..\Application\Application.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+    <ProjectReference Include="..\Infrastructure\Infra.Data.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
@@ -31,5 +31,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20210125030437_new-migration.cs" />
+    <Compile Remove="Migrations\ApplicationDBContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20210125030437_new-migration.Designer.cs" />
   </ItemGroup>
 </Project>

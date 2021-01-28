@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Application.csproj": {}
+    "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.Commons.csproj": {}
   },
   "projects": {
-    "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Application.csproj": {
+    "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Application.csproj",
-        "projectName": "Application",
-        "projectPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Application.csproj",
+        "projectUniqueName": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.Commons.csproj",
+        "projectName": "Infra.CrossCutting.Commons",
+        "projectPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.Commons.csproj",
         "packagesPath": "/Users/felixruan/.nuget/packages/",
-        "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/",
+        "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/felixruan/.config/NuGet/NuGet.Config"
@@ -38,9 +38,9 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
-            "Microsoft.Extensions.Logging.Abstractions": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[12.0.3, )"
             }
           },
           "imports": [

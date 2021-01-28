@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Enums\" />
+    <Folder Include="Entity\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Services\" />
   </ItemGroup>
 </Project>
