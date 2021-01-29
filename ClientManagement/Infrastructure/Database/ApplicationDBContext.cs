@@ -1,5 +1,5 @@
 ﻿using System;
-using Domain.entity;
+using Domain.Entities;
 using Infra.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 

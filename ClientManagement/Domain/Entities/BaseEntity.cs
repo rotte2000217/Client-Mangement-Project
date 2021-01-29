@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Domain.Interfaces.Entity
+namespace Domain.Entities
 {
     public abstract class BaseEntity
     {

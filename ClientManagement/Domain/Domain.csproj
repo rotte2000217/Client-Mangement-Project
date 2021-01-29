@@ -5,8 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entity\" />
+    <Folder Include="Entities\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Interfaces\Services\" />
+    <Folder Include="Interfaces\Repository\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

@@ -568,6 +568,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "Infra.Data": "1.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0"
         },
         "compile": {

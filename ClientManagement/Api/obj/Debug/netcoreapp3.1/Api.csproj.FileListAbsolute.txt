@@ -52,6 +52,8 @@
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
-/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infrastructure.dll
-/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infrastructure.pdb
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Domain.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infra.Data.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infra.Data.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Domain.pdb

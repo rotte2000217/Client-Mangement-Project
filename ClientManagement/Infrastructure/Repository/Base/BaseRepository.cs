@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain.Interfaces.Entity;
+using Domain.Entities;
 using Domain.Interfaces.Services;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +31,7 @@ namespace Infra.Data.Repository.Base
             return result;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             var result = await DbSet.ToListAsync();
             return result;

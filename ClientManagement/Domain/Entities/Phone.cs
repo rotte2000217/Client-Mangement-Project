@@ -1,7 +1,6 @@
 ﻿
-using Domain.Interfaces.Entity;
 
-namespace Domain.entity
+namespace Domain.Entities
 {
     public class Phone: BaseEntity
     {

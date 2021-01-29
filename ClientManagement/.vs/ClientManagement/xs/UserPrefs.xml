@@ -1,33 +1,23 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Repository/UnitOfWork/UnitOfWork.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Database/ApplicationDBContext.cs">
     <Files>
-      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="25" Column="1" />
-      <File FileName="Infrastructure/Repository/Base/BaseRepository.cs" Line="51" Column="1" />
-      <File FileName="Domain/Interfaces/Services/IBaseRepository.cs" Line="17" Column="1" />
-      <File FileName="Domain/Entity/BaseEntity.cs" Line="9" Column="1" />
-      <File FileName="Infrastructure/Configurations/PhoneConfiguration.cs" Line="22" Column="10" />
-      <File FileName="Infrastructure/Configurations/EmailConfiguration.cs" Line="17" Column="1" />
-      <File FileName="Infrastructure/Configurations/ClientConfigurations.cs" Line="28" Column="10" />
-      <File FileName="Infrastructure/Configurations/AddressConfiguration.cs" Line="27" Column="2" />
-      <File FileName="Api/Startup.cs" Line="25" Column="10" />
-      <File FileName="Infrastructure/Repository/UnitOfWork/UnitOfWork.cs" Line="16" Column="22" />
-      <File FileName="Domain/Interfaces/Services/IUnitOfWork.cs" Line="1" Column="1" />
+      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="11" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
-            <Node name="1 - Presentation" expanded="True">
-              <Node name="Api" expanded="True">
-                <Node name="Dependencies" expanded="True" />
+            <Node name="1 - Presentation" expanded="True" />
+            <Node name="2 - Application" expanded="True">
+              <Node name="Application" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+                <Node name="Services" expanded="True" />
               </Node>
             </Node>
-            <Node name="2 - Application" expanded="True" />
             <Node name="3  - Domain" expanded="True">
               <Node name="Domain" expanded="True">
-                <Node name="Entity" expanded="True" />
                 <Node name="Interfaces" expanded="True">
                   <Node name="Services" expanded="True" />
                 </Node>
@@ -36,10 +26,8 @@
             <Node name="4 - Infra" expanded="True">
               <Node name="Data" expanded="True">
                 <Node name="Infra.Data" expanded="True">
-                  <Node name="Repository" expanded="True">
-                    <Node name="UnitOfWork" expanded="True">
-                      <Node name="UnitOfWork.cs" selected="True" />
-                    </Node>
+                  <Node name="Database" expanded="True">
+                    <Node name="ApplicationDBContext.cs" selected="True" />
                   </Node>
                 </Node>
               </Node>

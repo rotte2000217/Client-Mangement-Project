@@ -1,4 +1,4 @@
-﻿namespace Domain.entity
+﻿namespace Domain.Entities
 {
     public enum ePhoneType
     {
