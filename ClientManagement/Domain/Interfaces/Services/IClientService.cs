@@ -11,6 +11,6 @@ namespace Domain.Interfaces.Services
         Task<IEnumerable<Client>> GetAllAsync();
         Task<Client> RegisterAsync(Client client);
         void Update(Client client);
-        void Delete(Client client);
+        void Delete(int id);
     }
 }

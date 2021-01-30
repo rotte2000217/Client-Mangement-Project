@@ -2,18 +2,25 @@
 using System.Threading.Tasks;
 using Application.Dtos;
 using Application.Interfaces;
+using Domain.Interfaces.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Application.UseCases
 {
-    public class GetDetailedClient : IGetDetailedClient
+    public class GetDetailedClientUseCase : IGetDetailedClientUseCase
     {
-        public GetDetailedClient()
+
+        private readonly IClientService _clientService;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public GetDetailedClientUseCase(ILogger<GetDetailedClientUseCase> logger, IClientService clientService)
         {
         }
 
-        Task<ClientDto> IGetDetailedClient.GetDetailedClient(string cpf)
+        public Task<ClientDto> GetById(int id)
         {
-            throw new NotImplementedException();
+            var clientDto = _clientService.FindByIdAsync(id);
+            return null; //MAPPING ?? 
         }
     }
 }

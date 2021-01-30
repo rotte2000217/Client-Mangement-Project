@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Application.Dtos
 {
-    public class ClientDto
+    public class ClientDto: BaseDto
     {
         public string FullName { get; set; }
 

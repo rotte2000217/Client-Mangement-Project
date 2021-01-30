@@ -5,6 +5,6 @@ namespace Application.Interfaces
 {
     public interface IDeleteClientUseCase
     {
-        Task<bool> DeleteClient(string id);
+        void Delete(int id);
     }
 }

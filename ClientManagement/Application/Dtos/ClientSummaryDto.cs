@@ -1,11 +1,9 @@
 ﻿using System;
 namespace Application.Dtos
 {
-    public class ClientSummaryDto
+    public class ClientSummaryDto: BaseDto
     {
         public string FullName { get; set; }
-        public string EmailAddress { get; set; }
         public string Document { get; set; }
-        public string Phone { get; set; } //talvez colocar.
     }
 }

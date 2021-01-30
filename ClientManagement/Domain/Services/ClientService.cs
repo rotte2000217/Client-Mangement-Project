@@ -37,9 +37,9 @@ namespace Domain.Services
             _repository.Update(client);
         }
 
-        public void Delete(Client client)
+        public void Delete(int id)
         {
-            _repository.Delete(client);
+            _repository.Delete(id);
         }
     }
 }

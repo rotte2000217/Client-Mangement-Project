@@ -11,6 +11,6 @@ namespace Domain.Interfaces.Services
         Task<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
         void Update(TEntity entity);
-        void Delete(TEntity entity); 
+        void Delete(int id); 
     }
 }

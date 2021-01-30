@@ -4,8 +4,8 @@ using Application.Dtos;
 
 namespace Application.Interfaces
 {
-    public interface IGetDetailedClient
+    public interface IGetDetailedClientUseCase
     {
-        Task<ClientDto> GetDetailedClient(string cpf);
+        Task<ClientDto> GetById(int id);
     }
 }

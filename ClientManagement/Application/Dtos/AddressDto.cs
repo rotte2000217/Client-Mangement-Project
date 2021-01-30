@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Application.Dtos
 {
-    public class AddressDto
+    public class AddressDto: BaseDto
     {
         public string Street { get; set; }
 

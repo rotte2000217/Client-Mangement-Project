@@ -1,35 +1,32 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Database/ApplicationDBContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Api/UseCases/GetClientsSummaryController.cs">
     <Files>
-      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="11" Column="48" />
+      <File FileName="Application/Interfaces/IGetDetailedClient.cs" Line="12" Column="1" />
+      <File FileName="Application/Interfaces/IUpdateClientUseCase.cs" Line="12" Column="1" />
+      <File FileName="Application/Interfaces/ICreateClientUseCase.cs" Line="12" Column="1" />
+      <File FileName="Api/UseCases/CreateClientController.cs" Line="11" Column="1" />
+      <File FileName="Api/UseCases/ClientManagerController.cs" Line="20" Column="10" />
+      <File FileName="Api/UseCases/DeleteClientController.cs" Line="1" Column="1" />
+      <File FileName="Api/UseCases/GetDetailedClient.cs" Line="9" Column="20" />
+      <File FileName="Api/UseCases/GetClientsSummaryController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
-            <Node name="1 - Presentation" expanded="True" />
+            <Node name="1 - Presentation" expanded="True">
+              <Node name="Api" expanded="True">
+                <Node name="Properties" expanded="True" />
+                <Node name="UseCases" expanded="True">
+                  <Node name="GetClientsSummaryController.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
             <Node name="2 - Application" expanded="True">
               <Node name="Application" expanded="True">
                 <Node name="Interfaces" expanded="True" />
-                <Node name="Services" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="3  - Domain" expanded="True">
-              <Node name="Domain" expanded="True">
-                <Node name="Interfaces" expanded="True">
-                  <Node name="Services" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="4 - Infra" expanded="True">
-              <Node name="Data" expanded="True">
-                <Node name="Infra.Data" expanded="True">
-                  <Node name="Database" expanded="True">
-                    <Node name="ApplicationDBContext.cs" selected="True" />
-                  </Node>
-                </Node>
               </Node>
             </Node>
           </Node>

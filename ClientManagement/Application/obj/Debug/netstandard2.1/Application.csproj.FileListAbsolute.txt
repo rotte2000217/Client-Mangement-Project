@@ -7,3 +7,8 @@
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Debug/netstandard2.1/Application.pdb
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Debug/netstandard2.1/Application.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Debug/netstandard2.1/Application.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Debug/netstandard2.1/Domain.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Debug/netstandard2.1/Infra.Data.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Debug/netstandard2.1/Infra.Data.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Debug/netstandard2.1/Domain.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Debug/netstandard2.1/Application.csproj.CopyComplete

@@ -6,6 +6,6 @@ namespace Application.Interfaces
 {
     public interface ICreateClientUseCase
     {
-        Task<bool> CreateClient(ClientDto client);
+        Task<int> RegisterAsync(ClientDto clientDto);
     }
 }

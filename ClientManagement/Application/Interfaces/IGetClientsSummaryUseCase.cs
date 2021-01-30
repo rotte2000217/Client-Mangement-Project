@@ -7,6 +7,6 @@ namespace Application.Interfaces
 {
     public interface IGetClientsSummaryUseCase
     {
-        Task<IEnumerable<ClientSummaryDto>> GetClients();
+        Task<List<ClientSummaryDto>> ListAllAsync();
     }
 }

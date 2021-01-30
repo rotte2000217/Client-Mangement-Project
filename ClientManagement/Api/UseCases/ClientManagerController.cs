@@ -1,53 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application;
+﻿using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace ContactManager.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/client")]
     public class ClientManagerController : ControllerBase
     {
         private readonly ILogger<ClientManagerController> _logger;
-        private static Random random = new Random();
-
+        private readonly ICreateClientUseCase _createClientUserCase;
         public ClientManagerController(ILogger<ClientManagerController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public String Get()
+        [Route("summary/list")]
+        public ActionResult GetSummaryList()
         {
-            return "index";
-        }
-        
-
-       [HttpGet]
-        [Route("/list")]
-        public ActionResult GetList()
-        {
-            var rng = new Random();
-            return null;/*Ok(Enumerable.Range(1, 5).Select(index => new ClientCardInfo
-            {
-                Document = RandomString(11),
-                Email = "felix_ruan09@hotmail.com",
-                Name = "Felix Ruan"
-            })
-            .ToArray());*/
+            return null;
 
         }
 
-
-        public static string RandomString(int length)
-        {
-            const string chars = "0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
     }
 }

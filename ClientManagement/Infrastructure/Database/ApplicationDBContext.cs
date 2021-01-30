@@ -19,6 +19,9 @@ namespace Infrastructure
        {
 
            modelBuilder.ApplyConfiguration(new EmailConfiguration());
-       }
+           modelBuilder.ApplyConfiguration(new ClientConfiguration());
+           modelBuilder.ApplyConfiguration(new AddressConfiguration());
+           modelBuilder.ApplyConfiguration(new PhoneConfiguration());
+        }
     }
 }

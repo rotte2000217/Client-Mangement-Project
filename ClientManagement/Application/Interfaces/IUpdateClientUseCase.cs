@@ -6,6 +6,6 @@ namespace Application.Interfaces
 {
     public interface IUpdateClientUseCase
     {
-        Task<bool> UpdateClient(ClientDto client);
+        void Update(ClientDto dto);
     }
 }

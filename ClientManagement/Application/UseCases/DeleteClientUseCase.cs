@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Application.CreateClient;
 using Application.Interfaces;
+using Domain.Interfaces.Services;
+using Microsoft.Extensions.Logging;
 
 namespace Application.UseCases
 {
     public class DeleteClientUseCase: IDeleteClientUseCase
     {
-        public DeleteClientUseCase()
+        private readonly ILogger<DeleteClientUseCase> _logger;
+        private readonly IClientService _clientService;
+
+        public DeleteClientUseCase(ILogger<DeleteClientUseCase> logger, IClientService clientService)
         {
+            _logger = logger;
+            _clientService = clientService;
         }
 
-        public Task<bool> DeleteClient(string id)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _clientService.Delete(id);
         }
     }
 }

@@ -20,9 +20,7 @@ namespace Api.UseCases
         [HttpGet]
         public ActionResult Delete(string id)
         {
-            return null; /*Ok(new ClientDto
-            {
-            });*/
+            return null; 
         }
     }
 }

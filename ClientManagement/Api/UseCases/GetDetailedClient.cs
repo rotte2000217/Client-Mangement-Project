@@ -6,11 +6,10 @@ using Microsoft.Extensions.Logging;
 namespace Api.UseCases.GetClientDetailed
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("client/")]
     public class GetClientDetailed : ControllerBase
     {
         private readonly ILogger<GetClientDetailed> _logger;
-        private static Random random = new Random();
 
         public GetClientDetailed(ILogger<GetClientDetailed> logger)
         {
@@ -19,11 +18,10 @@ namespace Api.UseCases.GetClientDetailed
 
 
         [HttpGet]
-        public ActionResult Get()
+        [Route("/{id?}")]
+        public ActionResult GetSummaryList(int? id)
         {
-            return Ok(new ClientDto
-            {
-            });
+            return null;
 
         }
 

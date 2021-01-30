@@ -32,14 +32,15 @@ namespace Api.UseCases.ListAllClients
         [Route("/list")]
         public ActionResult GetList()
         {
-            var rng = new Random();
+            return null;
+            /*var rng = new Random();
             return Ok(Enumerable.Range(1, 5).Select(index => new ClientSummaryDto
             {
                 Document = RandomString(11),
                 EmailAddress = "felix_ruan09@hotmail.com",
                 FullName = "Felix Ruan Dias Freitas"
             })
-            .ToArray());
+            .ToArray()); */
 
         }
 

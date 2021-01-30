@@ -42,9 +42,16 @@ namespace Infra.Data.Repository.Base
             DbSet.Update(entity);
         }
 
-        public void Delete(TEntity entity)
+        public void Delete(int id)
         {
+            var entity = GetById(id);
             DbSet.Remove(entity);
+        }
+
+        private TEntity GetById(int id)
+        {
+            var entity = DbSet.Find(id);
+            return entity;
         }
     }
 }
