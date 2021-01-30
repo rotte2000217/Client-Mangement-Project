@@ -73,3 +73,14 @@
 .address-cell-container {
     width: 100%;
 }
+
+.save-delete-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.save-delete-text {
+    margin: 1em 3em;
+    cursor: pointer;
+}

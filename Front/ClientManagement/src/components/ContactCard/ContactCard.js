@@ -16,19 +16,11 @@ export default function ContactCard(props) {
                 {props.name}
             </Typography>
         </div>
-        <div className="contact-lower-row">
-            <div className="contact-row">
+        <div className="contact-row">
             <PaymentIcon className="contact-icon" />
             <Typography>
                 {props.document}
             </Typography>
-            </div>
-            <div className="contact-row">
-            <EmailIcon className="contact-icon" />
-            <Typography>
-                {props.email}
-            </Typography>
-            </div>
         </div>
         </CardContent>
     </Card>

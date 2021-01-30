@@ -16,7 +16,8 @@ export default class App extends React.Component {
     this.state = {
       modalOpened: false,
       clientCardList: undefined,
-      loading: false
+      loading: false,
+      selectedPersonSummary: undefined,
     }
   }
   componentDidMount() {
@@ -41,12 +42,29 @@ export default class App extends React.Component {
     })
   }
 
-  openModal = () => {
-    this.setState({...this.state, modalOpened: true});
+  openModal = (clientInfo) => {
+    this.setState({...this.state, modalOpened: true, selectedPersonSummary: clientInfo});
   }
 
   closeModal = () => {
-    this.setState({...this.state, modalOpened: false});
+    this.setState({...this.state, modalOpened: false, selectedPersonSummary: undefined});
+  }
+
+  removeFromList = (id) => {
+    const { clientCardList } = this.state;
+    const newList = clientCardList.filter((value) => value.Id!= id);
+    this.setState({...this.state, clientCardList: newList})
+  }
+
+  addToList = (item) => {
+    const { clientCardList } = this.state;
+    console.log(item);
+    const newList = clientCardList.push({
+      Id: item.Id,
+      Document: item.Document,
+      FullName: item.FullName,
+    });
+    this.setState({...this.state, clientCardList: newList});
   }
 
   render() {
@@ -69,7 +87,7 @@ export default class App extends React.Component {
           ) : (
             <div>
               {!!clientCardList && clientCardList.map((clientInfo) => (
-                <ContactCard key={clientInfo.document} name={clientInfo.name} document={clientInfo.document} email={clientInfo.mail} openModal={this.openModal}/>
+                <ContactCard key={clientInfo.Id} name={clientInfo.FullName} document={clientInfo.Document} openModal={() => this.openModal(clientInfo)}/>
               ))}
             </div>
           )}
@@ -80,7 +98,12 @@ export default class App extends React.Component {
           open={modalOpened}
           onClose={this.closeModal}
         >
-          <ContactModal closeModal={this.closeModal}/>
+          <ContactModal
+            closeModal={this.closeModal}
+            selectedPersonSummary={this.state.selectedPersonSummary}
+            removeFromList={this.removeFromList}
+            addToList={this.addToList}
+          />
         </Modal>
 
         <Fab className="floating-button" color="primary" aria-label="add" onClick={() => this.openModal()}>

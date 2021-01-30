@@ -4,169 +4,367 @@ import TextField from '@material-ui/core/TextField';
 import ClearIcon from '@material-ui/icons/Clear';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import Card from '@material-ui/core/Card';
+import { getDetails, updateClient, deleteClient, createClient } from '../../Config';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 export default class ContactModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       info: {
-        addresses: [
-          {
-            city: "Recife",
-            street: "Av manoel borba",
-            neighborhood: "Boa Vista",
-
-            //TODO: Adds this configuration in modal
-            streetNumber: 22,
-            zipCode: 50070000,
-          },
-        ],
-        emails:[{
-          emailAddress: "felix_ruan09@hotmail.com"
-          }
-        ],
-        phones:[{
-          phoneNumber: "81997056040",
-
-          //TODO: Adds this configuration in modal
-          countryCode: "55",
-          areaCode: "81",
-          phoneType: 1,
-        }
-      ],
+        Id: '',
+        FullName: '',
+        Document: '',
+        Birthday: '',
+        MotherName: '',
+        FatherName: '',
+        Emails: [],
+        Addresses: [],
+        Phones: []
       },
       loading: false
     }
   }
 
+  componentDidMount() {
+    if(!!this.props.selectedPersonSummary) {
+      this.getClientDetails(this.props.selectedPersonSummary.Id);
+    }
+  }
+
+  getClientDetails = (id) => {
+    this.setState({...this.state, loading: true});
+    fetch(getDetails + id, { 
+      method: 'get'
+    })
+    .then((response) => {
+      if (response.status !== 200) {
+        this.setState({...this.state, loading: false});
+        alert('Não foi possível as informações do cliente.');
+      }
+      else {
+        response.json().then((data) => {
+          this.setState({...this.state, info: data, loading: false});
+        });
+      }
+    })
+    .catch(() => {
+      this.setState({...this.state, loading: false});
+      alert('Não foi possível as informações do cliente.');
+    })
+  }
+
   addPhone = () => {
     const { info } = this.state;
-    const { phones } = info;
-
-    let newPhones = phones;
-    newPhones.push({phoneNumber: ""})
-    this.setState({...this.state, info: {...info, phones: newPhones} });
+    const { Phones } = info;
+    console.log(this.state);
+    let newPhones = Phones;
+    newPhones.push({CountryCode: '', AreaCode: '', Number: '', Type: undefined});
+    this.setState({...this.state, info: {...info, Phones: newPhones} });
   }
 
   addEmail = () => {
     const { info } = this.state;
-    const { emails } = info;
+    const { Emails } = info;
 
-    let newEmails = emails;
-    newEmails.push({emailAddress: ""})
-    this.setState({...this.state, info: {...info, emails: newEmails} });
+    let newEmails = Emails;
+    newEmails.push({EmailAddress: ""});
+    this.setState({...this.state, info: {...info, Emails: newEmails} });
   }
 
   editEmailAddress = (value, index) => {
     const { info } = this.state;
-    const { emails } = info;
+    const { Emails } = info;
 
-    let newEmails = emails;
-    newEmails[index].emailAddress = value;
-    this.setState({...this.state, info: {...info, emails: newEmails} });
+    let newEmails = Emails;
+    newEmails[index].EmailAddress = value;
+    this.setState({...this.state, info: {...info, Emails: newEmails} });
   }
 
   editPhoneNumber = (value, index) => {
     const { info } = this.state;
-    const { phones } = info;
+    const { Phones } = info;
 
-    let newPhones = phones;
-    newPhones[index].phoneNumber = value;
-    this.setState({...this.state, info: {...info, phones: newPhones} });
+    let newPhones = Phones;
+    newPhones[index].Number = value;
+    this.setState({...this.state, info: {...info, Phones: newPhones} });
+  }
+
+  editCountryCode = (value, index) => {
+    const { info } = this.state;
+    const { Phones } = info;
+
+    let newPhones = Phones;
+    newPhones[index].CountryCode = value;
+    this.setState({...this.state, info: {...info, Phones: newPhones} });
+  }
+
+  editAreaCode = (value, index) => {
+    const { info } = this.state;
+    const { Phones } = info;
+
+    let newPhones = Phones;
+    newPhones[index].AreaCode = value;
+    this.setState({...this.state, info: {...info, Phones: newPhones} });
+  }
+
+  editPhoneType = (value, index) => {
+    const { info } = this.state;
+    const { Phones } = info;
+
+    let newPhones = Phones;
+    newPhones[index].Type = value;
+    this.setState({...this.state, info: {...info, Phones: newPhones} });
   }
 
   addAddress = () => {
     const { info } = this.state;
-    const { addresses } = info;
+    const { Addresses } = info;
 
-    let newAddresses = addresses;
-    newAddresses.push({
-      city: "",
-      street: "",
-      neighborhood: ""
-    })
-    this.setState({...this.state, info: {...info, addresses: newAddresses} });
+    let newAddresses = Addresses;
+    newAddresses.push({Street: '', Neighborhood: '', City: '', StreetNumber: '', ZipCode: ''});
+    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
   }
 
   editStreet = (value, index) => {
     const { info } = this.state;
-    const { addresses } = info;
+    const { Addresses } = info;
 
-    let newAddresses = addresses;
-    newAddresses[index].street = value;
-    this.setState({...this.state, info: {...info, addresses: newAddresses} });
+    let newAddresses = Addresses;
+    newAddresses[index].Street = value;
+    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
   }
 
   editCity = (value, index) => {
     const { info } = this.state;
-    const { addresses } = info;
+    const { Addresses } = info;
 
-    let newAddresses = addresses;
-    newAddresses[index].city = value;
-    this.setState({...this.state, info: {...info, addresses: newAddresses} });
+    let newAddresses = Addresses;
+    newAddresses[index].City = value;
+    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
+  }
+
+  editZipCode = (value, index) => {
+    const { info } = this.state;
+    const { Addresses } = info;
+
+    let newAddresses = Addresses;
+    newAddresses[index].ZipCode = value;
+    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
+  }
+
+  editAddressNumber = (value, index) => {
+    const { info } = this.state;
+    const { Addresses } = info;
+
+    let newAddresses = Addresses;
+    newAddresses[index].StreetNumber = value;
+    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
   }
 
   editNeighborhood = (value, index) => {
     const { info } = this.state;
-    const { addresses } = info;
+    const { Addresses } = info;
 
-    let newAddresses = addresses;
-    newAddresses[index].neighborhood = value;
-    this.setState({...this.state, info: {...info, addresses: newAddresses} });
+    let newAddresses = Addresses;
+    newAddresses[index].Neighborhood = value;
+    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
   }
 
   removePhone = (index) => {
     if ( window.confirm("Tem certeza que seja remover esta entrada?")) {
       const { info } = this.state;
-      const { phones } = info;
+      const { Phones } = info;
 
-      let newPhones = phones;
+      let newPhones = Phones;
       newPhones.splice(index, 1)
-      this.setState({...this.state, info: {...info, phones: newPhones} });
+      this.setState({...this.state, info: {...info, Phones: newPhones} });
     }
   }
 
   removeAddress = (index) => {
     if ( window.confirm("Tem certeza que seja remover esta entrada?")) {
       const { info } = this.state;
-      const { addresses } = info;
+      const { Addresses } = info;
 
-      let newAddresses = addresses;
+      let newAddresses = Addresses;
       newAddresses.splice(index, 1)
-      this.setState({...this.state, info: {...info, addresses: newAddresses} });
+      this.setState({...this.state, info: {...info, Addresses: newAddresses} });
     }
   }
 
   removeEmail = (index) => {
     if ( window.confirm("Tem certeza que seja remover esta entrada?")) {
       const { info } = this.state;
-      const { emails } = info;
+      const { Emails } = info;
 
-      let newEmails = emails;
+      let newEmails = Emails;
       newEmails.splice(index, 1)
-      this.setState({...this.state, info: {...info, emails: newEmails} });
+      this.setState({...this.state, info: {...info, Emails: newEmails} });
     }
   }
 
-  render() {
+  deleteClient = () => {
+    const { selectedPersonSummary } = this.props;
+    this.setState({...this.state, loading: true});
+    fetch(getDetails + selectedPersonSummary?.Id, { 
+      method: 'delete'
+    })
+    .then((response) => {
+      if (response.status !== 200) {
+        this.setState({...this.state, loading: false});
+        alert('Não foi possível deletar as informações do cliente.');
+      } else {
+        console.log('entrou aqui');
+        this.setState({...this.state, loading: false});
+        this.props.removeFromList(selectedPersonSummary?.Id);
+        this.props.closeModal()
+      }
+    })
+    .catch((e) => {
+      console.log(e);
+      this.setState({...this.state, loading: false});
+      alert('Não foi possível deletar as informações do cliente.');
+    })
+  }
+
+  saveClient = () => {
+    if(!!this.props.selectedPersonSummary) {
+      this.updateClient();
+    } else {
+      this.createClient();
+    }
+  }
+
+  createClient = () => {
+    this.setState({...this.state, loading: true});
+    fetch(createClient, { 
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state.info)
+    })
+    .then((response) => {
+      if (response.status !== 200) {
+        this.setState({...this.state, loading: false});
+        alert('Não foi possível salvar as informações do cliente.');
+      }
+      else {
+        this.setState({...this.state, loading: false});
+        this.props.addToList(this.state.info);
+      }
+    })
+    .catch(() => {
+      this.setState({...this.state, loading: false});
+      alert('Não foi possível  salvar as informações do cliente.');
+    })
+  }
+
+  updateClient = () => {
+    const { selectedPersonSummary } = this.props;
+    this.setState({...this.state, loading: true});
+    fetch(updateClient + selectedPersonSummary?.Id, { 
+      method: 'put',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state.info)
+    })
+    .then((response) => {
+      if (response.status !== 200) {
+        this.setState({...this.state, loading: false});
+        alert('Não foi possível salvar as informações do cliente.');
+      }
+      else {
+        this.setState({...this.state, loading: false});
+      }
+    })
+    .catch(() => {
+      this.setState({...this.state, loading: false});
+      alert('Não foi possível salvar as informações do cliente.');
+    })
+  }
+
+  editName = (value) => {
     const { info } = this.state;
-    const { addresses, emails, phones } = info;
+    this.setState({...this.state, info: {...info, FullName: value} });
+  }
+
+  editDocument = (value) => {
+    const { info } = this.state;
+    this.setState({...this.state, info: {...info, Document: value} });
+  }
+
+  editBirthday = (value) => {
+    const { info } = this.state;
+    this.setState({...this.state, info: {...info, Birthday: value} });
+  }
+
+  editMotherName = (value) => {
+    const { info } = this.state;
+    this.setState({...this.state, info: {...info, MotherName: value} });
+  }
+
+  editFatherName = (value) => {
+    const { info } = this.state;
+    this.setState({...this.state, info: {...info, FatherName: value} });
+  }
+
+
+  render() {
+    const { info, loading } = this.state;
+    const { Addresses, Emails, Phones } = info;
+
+    if (loading) {
+      return (
+        <div className="modal-container">
+          <div className="center-align">
+            <CircularProgress />
+          </div>
+        </div>
+      )
+    }
 
     return (
       <div className="modal-container">
+        <div className="save-delete-container">
+          <p className="save-delete-text" onClick={() => this.deleteClient()}>Deletar</p>
+          <p className="save-delete-text" onClick={() => this.saveClient()}>Salvar</p>
+        </div>
         <h2>Dados pessoais</h2>
         <div className="text-field-container">
-          <TextField className="text-field" label="Nome" />
-          <TextField className="text-field" label="Cpf" />
-          <TextField className="text-field" label="Data de nascimento" />
-          <TextField className="text-field" label="Nome da mãe" />
+          <TextField className="text-field" label="Nome" value={this.state.info.FullName} onChange={(e) => this.editName(e.target.value)}/>
+          <TextField className="text-field" label="Cpf" value={this.state.info.Document} onChange={(e) => this.editDocument(e.target.value)}/>
+          <TextField className="text-field" label="Data de nascimento" value={this.state.info.Birthday} onChange={(e) => this.editBirthday(e.target.value)}/>
+          <TextField className="text-field" label="Nome da mãe" value={this.state.info.MotherName} onChange={(e) => this.editMotherName(e.target.value)}/>
+          <TextField className="text-field" label="Nome do pai" value={this.state.info.FatherName} onChange={(e) => this.editFatherName(e.target.value)}/>
         </div>
 
         <div className="label-field-container"><h2>Telefone</h2><AddCircleOutlineIcon className="add-icon" onClick={() => this.addPhone()}/></div>
         <div className="text-field-container">
-        {phones.map((entry, index) => (
+        {Phones.map((entry, index) => (
           <Card className="additional-field">
-            <TextField className="text-field-full" label="Telefone"  value={entry.phoneNumber} onChange={(e) => this.editPhoneNumber(e.target.value, index)}/>
+            <div>
+              <TextField className="text-field-full" label="Código do pais"  value={entry.CountryCode} onChange={(e) => this.editCountryCode(e.target.value, index)}/>
+              <TextField className="text-field-full" label="Código de área"  value={entry.AreaCode} onChange={(e) => this.editAreaCode(e.target.value, index)}/>
+              <TextField className="text-field-full" label="Número"  value={entry.Number} onChange={(e) => this.editPhoneNumber(e.target.value, index)}/>
+              <Select
+                className="text-field-full"
+                labelId="Tipo"
+                value={entry.Type}
+                onChange={(e) => this.editPhoneType(e.target.value, index)}
+              >
+                <MenuItem value={0}>Celular</MenuItem>
+                <MenuItem value={1}>Trabalho</MenuItem>
+                <MenuItem value={2}>Casa</MenuItem>
+                <MenuItem value={3}>Outro</MenuItem>
+              </Select>
+            </div>
             <ClearIcon className="pointer-icon" onClick={() => this.removePhone()}/>
           </Card>
         ))}
@@ -174,9 +372,9 @@ export default class ContactModal extends React.Component {
 
         <div className="label-field-container"><h2>Email</h2> <AddCircleOutlineIcon className="add-icon" onClick={() => this.addEmail()}/></div>
         <div className="text-field-container">
-        {emails.map((entry, index) => (
+        {Emails.map((entry, index) => (
           <Card className="additional-field">
-            <TextField className="text-field-full" label="Email" value={entry.emailAddress} onChange={(e) => this.editEmailAddress(e.target.value, index)}/>
+            <TextField className="text-field-full" label="Email" value={entry.EmailAddress} onChange={(e) => this.editEmailAddress(e.target.value, index)}/>
             <ClearIcon className="pointer-icon" onClick={() => this.removeEmail()}/>
           </Card>
         ))}
@@ -184,22 +382,23 @@ export default class ContactModal extends React.Component {
 
         <div className="label-field-container "> <h2>Endereço</h2> <AddCircleOutlineIcon className="add-icon" onClick={() => this.addAddress()}/></div>
         <div className="text-field-container">
-          {addresses.map((entry, index) => (
+          {Addresses.map((entry, index) => (
             <Card key={"" + index} className="address-container">
               <div className="address-cell-container">
+                <TextField className="text-field-full" label="CEP" value={entry.ZipCode} onChange={(e) => this.editZipCode(e.target.value, index)}/>
                 <TextField
                   className="text-field-full"
                   label="Rua"
-                  value={entry.street}
+                  value={entry.Street}
                   onChange={(e) => this.editStreet(e.target.value, index)}
                 />
-                <TextField className="text-field-full" label="Bairro" value={entry.neighborhood} onChange={(e) => this.editNeighborhood(e.target.value, index)}/>
-                <TextField className="text-field-full" label="Cidade" value={entry.city} onChange={(e) => this.editCity(e.target.value, index)}/>
+                <TextField className="text-field-full" label="Número" value={entry.StreetNumber} onChange={(e) => this.editAddressNumber(e.target.value, index)}/>
+                <TextField className="text-field-full" label="Bairro" value={entry.Neighborhood} onChange={(e) => this.editNeighborhood(e.target.value, index)}/>
+                <TextField className="text-field-full" label="Cidade" value={entry.City} onChange={(e) => this.editCity(e.target.value, index)}/>
               </div>
               <ClearIcon className="pointer-icon" onClick={() => this.removeAddress(index)}/>
             </Card>
           ))}
-          
         </div>
       </div>
     );
