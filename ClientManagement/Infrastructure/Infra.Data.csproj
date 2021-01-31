@@ -7,9 +7,9 @@
   <ItemGroup>
     <Folder Include="Database\" />
     <Folder Include="Configurations\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Repository\Base\" />
-    <Folder Include="Repository\UnitOfWork\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Base\" />
+    <Folder Include="Repositories\UnitOfWork\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">

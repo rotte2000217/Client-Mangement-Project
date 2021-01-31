@@ -6,7 +6,7 @@ using Domain.Interfaces.Services;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra.Data.Repository.Base
+namespace Infra.Data.Repositories.Base
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {

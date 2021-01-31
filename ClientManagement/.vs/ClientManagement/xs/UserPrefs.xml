@@ -1,8 +1,14 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Services/ClientManagementService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Repositories/ClientRepository.cs">
     <Files>
-      <File FileName="Application/Services/ClientManagementService.cs" Line="17" Column="134" />
+      <File FileName="Api/Controllers/ClientManagementController.cs" Line="35" Column="70" />
+      <File FileName="Api/appsettings.json" Line="1" Column="1" />
+      <File FileName="Api/Properties/launchSettings.json" Line="22" Column="29" />
+      <File FileName="Infra.CrossCutting.Commons/IoC/Injector.cs" Line="31" Column="63" />
+      <File FileName="Infrastructure/Repository/UnitOfWork/UnitOfWork.cs" Line="14" Column="58" />
+      <File FileName="Infrastructure/Repositories/Base/BaseRepository.cs" Line="15" Column="1" />
+      <File FileName="Infrastructure/Repositories/ClientRepository.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,12 +16,24 @@
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
             <Node name="1 - Presentation" expanded="True">
-              <Node name="Api" expanded="True">
-                <Node name="Controllers" expanded="True" />
+              <Node name="Api" expanded="True" />
+            </Node>
+            <Node name="3  - Domain" expanded="True">
+              <Node name="Domain" expanded="True">
+                <Node name="Interfaces" expanded="True">
+                  <Node name="Services" expanded="True" />
+                </Node>
+                <Node name="Services" expanded="True" />
               </Node>
             </Node>
-            <Node name="2 - Application" expanded="True">
-              <Node name="Application" expanded="True" />
+            <Node name="4 - Infra" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="Infra.Data" expanded="True">
+                  <Node name="Repositories" expanded="True">
+                    <Node name="ClientRepository.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
@@ -28,5 +46,4 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.4_220-_220Infra.CrossCutting.Infra.CrossCutting.Commons FirstBuild="True" />
 </Properties>

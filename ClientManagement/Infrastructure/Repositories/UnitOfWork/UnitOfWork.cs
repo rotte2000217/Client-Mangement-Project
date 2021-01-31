@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Domain.Interfaces.Services;
 using Infrastructure;
 
-namespace Infra.Data.Repository.UnitOfWork
+namespace Infra.Data.Repositories.UnitOfWork
 {
     public class UnitOfWork: IUnitOfWork
     {

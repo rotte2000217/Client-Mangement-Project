@@ -1,0 +1,9 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/bin/Debug/netstandard2.1/Infra.CrossCutting.Commons.deps.json
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/bin/Debug/netstandard2.1/Infra.CrossCutting.Commons.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/bin/Debug/netstandard2.1/Infra.CrossCutting.Commons.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/Debug/netstandard2.1/Infra.CrossCutting.Commons.csprojAssemblyReference.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/Debug/netstandard2.1/Infra.CrossCutting.Commons.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/Debug/netstandard2.1/Infra.CrossCutting.Commons.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/Debug/netstandard2.1/Infra.CrossCutting.Commons.csproj.CoreCompileInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/Debug/netstandard2.1/Infra.CrossCutting.Commons.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/obj/Debug/netstandard2.1/Infra.CrossCutting.Commons.pdb
