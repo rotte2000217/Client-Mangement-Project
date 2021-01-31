@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Domain/Services/ClientService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Dtos/AddressDto.cs">
     <Files>
-      <File FileName="Api/UseCases/GetDetailedClient.cs" Line="14" Column="78" />
-      <File FileName="Api/UseCases/GetClientsSummaryController.cs" Line="16" Column="43" />
-      <File FileName="Api/UseCases/CreateClientController.cs" Line="26" Column="10" />
-      <File FileName="Api/UseCases/DeleteClientController.cs" Line="10" Column="57" />
-      <File FileName="Api/UseCases/UpdateClientController.cs" Line="21" Column="1" />
-      <File FileName="Domain/Services/ClientService.cs" Line="1" Column="1" />
+      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="24" Column="59" />
+      <File FileName="Infrastructure/Configurations/PhoneConfiguration.cs" Line="24" Column="2" />
+      <File FileName="Api/Startup.cs" Line="30" Column="37" />
+      <File FileName="Api/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="Api/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Api/appsettings.json" Line="8" Column="30" />
+      <File FileName="Api/UseCases/CreateClientController.cs" Line="1" Column="1" />
+      <File FileName="Application/Dtos/AddressDto.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,12 +17,8 @@
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
             <Node name="1 - Presentation" expanded="True">
-              <Node name="Api" expanded="True" />
-            </Node>
-            <Node name="2 - Application" expanded="True">
-              <Node name="Application" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-                <Node name="Services" expanded="True" />
+              <Node name="Api" expanded="True">
+                <Node name="Properties" expanded="True" />
                 <Node name="UseCases" expanded="True" />
               </Node>
             </Node>

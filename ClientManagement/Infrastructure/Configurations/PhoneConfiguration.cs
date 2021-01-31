@@ -9,7 +9,7 @@ namespace Infra.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Phone> builder)
         {
-            builder.ToTable("Emails");
+            builder.ToTable("Phones");
             builder.Property(e => e.Id).HasColumnName("Id");
             builder.Property(e => e.AreaCode).HasColumnName("AreaCode");
             builder.Property(e => e.CountryCode).HasColumnName("CountryCode");
