@@ -1,55 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application;
-using Application.Dtos;
+
+using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Api.UseCases.ListAllClients
 {
     [ApiController]
-    [Route("[controller]")]
-    public class ListAllClients : ControllerBase
+    [Route("/Client")]
+    public class GetClientsSummaryController : ControllerBase
     {
-        private readonly ILogger<ListAllClients> _logger;
-        private static Random random = new Random();
+        private readonly ILogger<GetClientsSummaryController> _logger;
+        private readonly IGetClientsSummaryUseCase _getClientSummaryUseCase;
 
-        public ListAllClients(ILogger<ListAllClients> logger)
+        public GetClientsSummaryController(ILogger<GetClientsSummaryController> logger, IGetClientsSummaryUseCase getClientSummaryUseCase)
         {
             _logger = logger;
+            _getClientSummaryUseCase = getClientSummaryUseCase;
         }
 
         [HttpGet]
-        public String Get()
+        [Route("Ping")]
+        public ActionResult Get()
         {
-            return "index";
+            return Ok("Pong");
         }
 
 
         [HttpGet]
-        [Route("/list")]
-        public ActionResult GetList()
+        [Route("Summary/List")]
+        public ActionResult GetClientSummaryList()
         {
-            return null;
-            /*var rng = new Random();
-            return Ok(Enumerable.Range(1, 5).Select(index => new ClientSummaryDto
-            {
-                Document = RandomString(11),
-                EmailAddress = "felix_ruan09@hotmail.com",
-                FullName = "Felix Ruan Dias Freitas"
-            })
-            .ToArray()); */
+            var clientList = _getClientSummaryUseCase.ListAllAsync();
+            return Ok(clientList); 
 
-        }
-
-
-        public static string RandomString(int length)
-        {
-            const string chars = "0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

@@ -4,17 +4,17 @@ import TextField from '@material-ui/core/TextField';
 import ClearIcon from '@material-ui/icons/Clear';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import Card from '@material-ui/core/Card';
-import { getDetails, updateClient, deleteClient, createClient } from '../../Config';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { Api } from '../../rpc/Api';
 
 export default class ContactModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       info: {
-        Id: '',
+        Id: undefined,
         FullName: '',
         Document: '',
         Birthday: '',
@@ -29,31 +29,76 @@ export default class ContactModal extends React.Component {
   }
 
   componentDidMount() {
-    if(!!this.props.selectedPersonSummary) {
-      this.getClientDetails(this.props.selectedPersonSummary.Id);
+    const { selectedPersonSummary } = this.props;
+
+    if(!!selectedPersonSummary) {
+      this.getClientDetails(selectedPersonSummary?.Id);
     }
   }
 
-  getClientDetails = (id) => {
+  saveClient = () => {
+    if(!!this.props.selectedPersonSummary) {
+      this.updateClient();
+    } else {
+      this.createClient();
+    }
+  }
+
+  async getClientDetails(id) {
     this.setState({...this.state, loading: true});
-    fetch(getDetails + id, { 
-      method: 'get'
-    })
-    .then((response) => {
-      if (response.status !== 200) {
-        this.setState({...this.state, loading: false});
-        alert('Não foi possível as informações do cliente.');
-      }
-      else {
-        response.json().then((data) => {
-          this.setState({...this.state, info: data, loading: false});
-        });
-      }
-    })
-    .catch(() => {
-      this.setState({...this.state, loading: false});
+    const clientDetails = await Api.getClientDetails(id);
+    if (!!clientDetails) {
+      this.setState({...this.state, info: clientDetails, loading: false});
+    } else {
       alert('Não foi possível as informações do cliente.');
-    })
+      this.setState({...this.state, loading: false});
+    }
+  }
+
+  async deleteClient() {
+    const { selectedPersonSummary, removeFromList, closeModal } = this.props;
+    this.setState({...this.state, loading: true});
+
+    const response = await Api.deleteClient(selectedPersonSummary?.Id);
+  
+    if (!!response) {
+      this.setState({...this.state, loading: false});
+      removeFromList(selectedPersonSummary?.Id);
+      closeModal();
+    } else {
+      alert('Não foi possível deletar as informações do cliente.');
+      this.setState({...this.state, loading: false});
+    }
+  }
+
+  async createClient() {
+    const { info } = this.state;
+    this.setState({...this.state, loading: true});
+  
+    const clientInfo = await Api.createClient(info);
+    if (!!clientInfo) {
+      this.setState({...this.state, loading: false});
+      this.props.addToList(clientInfo);
+      this.props.closeModal();
+    } else {
+      alert('Não foi possível salvar as informações do cliente.');
+      this.setState({...this.state, loading: false});
+    }
+  }
+
+  async updateClient() {
+    const { info } = this.state;
+    const { updateList, closeModal } = this.props;
+
+    this.setState({...this.state, loading: true});
+    const response = await Api.updateClient(info);
+    if (!!response) {
+      updateList(info);
+      closeModal();
+    } else {
+      alert('Não foi possível salvar as informações do cliente.');
+    }
+    this.setState({...this.state, loading: false});
   }
 
   addPhone = () => {
@@ -206,90 +251,6 @@ export default class ContactModal extends React.Component {
     }
   }
 
-  deleteClient = () => {
-    const { selectedPersonSummary } = this.props;
-    this.setState({...this.state, loading: true});
-    fetch(getDetails + selectedPersonSummary?.Id, { 
-      method: 'delete'
-    })
-    .then((response) => {
-      if (response.status !== 200) {
-        this.setState({...this.state, loading: false});
-        alert('Não foi possível deletar as informações do cliente.');
-      } else {
-        console.log('entrou aqui');
-        this.setState({...this.state, loading: false});
-        this.props.removeFromList(selectedPersonSummary?.Id);
-        this.props.closeModal()
-      }
-    })
-    .catch((e) => {
-      console.log(e);
-      this.setState({...this.state, loading: false});
-      alert('Não foi possível deletar as informações do cliente.');
-    })
-  }
-
-  saveClient = () => {
-    if(!!this.props.selectedPersonSummary) {
-      this.updateClient();
-    } else {
-      this.createClient();
-    }
-  }
-
-  createClient = () => {
-    this.setState({...this.state, loading: true});
-    fetch(createClient, { 
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state.info)
-    })
-    .then((response) => {
-      if (response.status !== 200) {
-        this.setState({...this.state, loading: false});
-        alert('Não foi possível salvar as informações do cliente.');
-      }
-      else {
-        this.setState({...this.state, loading: false});
-        this.props.addToList(this.state.info);
-      }
-    })
-    .catch(() => {
-      this.setState({...this.state, loading: false});
-      alert('Não foi possível  salvar as informações do cliente.');
-    })
-  }
-
-  updateClient = () => {
-    const { selectedPersonSummary } = this.props;
-    this.setState({...this.state, loading: true});
-    fetch(updateClient + selectedPersonSummary?.Id, { 
-      method: 'put',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state.info)
-    })
-    .then((response) => {
-      if (response.status !== 200) {
-        this.setState({...this.state, loading: false});
-        alert('Não foi possível salvar as informações do cliente.');
-      }
-      else {
-        this.setState({...this.state, loading: false});
-      }
-    })
-    .catch(() => {
-      this.setState({...this.state, loading: false});
-      alert('Não foi possível salvar as informações do cliente.');
-    })
-  }
-
   editName = (value) => {
     const { info } = this.state;
     this.setState({...this.state, info: {...info, FullName: value} });
@@ -314,7 +275,6 @@ export default class ContactModal extends React.Component {
     const { info } = this.state;
     this.setState({...this.state, info: {...info, FatherName: value} });
   }
-
 
   render() {
     const { info, loading } = this.state;

@@ -1,26 +1,30 @@
 ﻿using System;
 using Application.Dtos;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 namespace Api.UseCases
 {
     [ApiController]
-    [Route("[controller]")]
-    public class DeleteClient
+    [Route("/Client")]
+    public class DeleteClientController : ControllerBase
     {
-        private readonly ILogger<DeleteClient> _logger;
-        private static Random random = new Random();
+        private readonly ILogger<DeleteClientController> _logger;
+        private readonly IDeleteClientUseCase _deleteClientUseCase;
 
-        public DeleteClient(ILogger<DeleteClient> logger)
+        public DeleteClientController(ILogger<DeleteClientController> logger, IDeleteClientUseCase deleteClientUseCase)
         {
             _logger = logger;
+            _deleteClientUseCase = deleteClientUseCase;
         }
 
 
-        [HttpGet]
-        public ActionResult Delete(string id)
+        [HttpDelete]
+        [Route("{id?}")]
+        public ActionResult DeleteClient(int id)
         {
-            return null; 
+            _deleteClientUseCase.Delete(id);
+           return Ok();
         }
     }
 }

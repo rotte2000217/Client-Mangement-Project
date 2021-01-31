@@ -6,10 +6,12 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ContactCard from './components/ContactCard/ContactCard';
-import { getAllEndpoint } from './Config';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Modal from '@material-ui/core/Modal';
 import ContactModal from './components/Modal/Modal';
+import { Utils } from './Utils';
+import { Api } from './rpc/Api';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -21,25 +23,18 @@ export default class App extends React.Component {
     }
   }
   componentDidMount() {
+    this.loadClientList();
+  }
+
+  async loadClientList() {
     this.setState({...this.state, loading: true});
-    fetch(getAllEndpoint, { 
-      method: 'get'
-    })
-    .then((response) => {
-      if (response.status !== 200) {
-        this.setState({...this.state, loading: false});
-        alert('Não foi possível carregar os clientes, tente novamente mais tarde.')
-      }
-      else {
-        response.json().then((data) => {
-          this.setState({...this.state, clientCardList: data, loading: false});
-        });
-      }
-    })
-    .catch(() => {
+    const clientList = await Api.getClientList();
+    if (!!clientList) {
+      this.setState({...this.state, clientCardList: clientList, loading: false});
+    } else {
+      alert('Não foi possível carregar os clientes, tente novamente mais tarde.');
       this.setState({...this.state, loading: false});
-      alert('Não foi possível carregar os clientes, tente novamente mais tarde.')
-    })
+    }
   }
 
   openModal = (clientInfo) => {
@@ -52,18 +47,25 @@ export default class App extends React.Component {
 
   removeFromList = (id) => {
     const { clientCardList } = this.state;
-    const newList = clientCardList.filter((value) => value.Id!= id);
+
+    let newList = Utils.objectClone(clientCardList);
+    newList = newList.filter((value) => value.Id !== id);
     this.setState({...this.state, clientCardList: newList})
   }
 
   addToList = (item) => {
     const { clientCardList } = this.state;
-    console.log(item);
-    const newList = clientCardList.push({
-      Id: item.Id,
-      Document: item.Document,
-      FullName: item.FullName,
-    });
+
+    let newList = Utils.objectClone(clientCardList);
+    newList.push(Utils.getSummaryFromClientDetails(item));
+    this.setState({...this.state, clientCardList: newList});
+  }
+  
+  updateList = (item) => {
+    const { clientCardList } = this.state;
+
+    let newList = Utils.objectClone(clientCardList);
+    newList = newList.map(entry => entry.Id === item.Id ? Utils.getSummaryFromClientDetails(item) : entry);
     this.setState({...this.state, clientCardList: newList});
   }
 
@@ -103,6 +105,7 @@ export default class App extends React.Component {
             selectedPersonSummary={this.state.selectedPersonSummary}
             removeFromList={this.removeFromList}
             addToList={this.addToList}
+            updateList={this.updateList}
           />
         </Modal>
 

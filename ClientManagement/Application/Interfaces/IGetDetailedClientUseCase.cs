@@ -6,6 +6,6 @@ namespace Application.Interfaces
 {
     public interface IGetDetailedClientUseCase
     {
-        Task<ClientDto> GetById(int id);
+        Task<ClientDto> GetByIdAsync(int id);
     }
 }

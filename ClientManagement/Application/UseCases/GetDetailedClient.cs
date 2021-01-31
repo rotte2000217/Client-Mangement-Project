@@ -17,7 +17,7 @@ namespace Application.UseCases
         {
         }
 
-        public Task<ClientDto> GetById(int id)
+        public Task<ClientDto> GetByIdAsync(int id)
         {
             var clientDto = _clientService.FindByIdAsync(id);
             return null; //MAPPING ?? 
