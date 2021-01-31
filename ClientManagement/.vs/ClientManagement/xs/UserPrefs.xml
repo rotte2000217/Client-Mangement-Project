@@ -1,15 +1,8 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Dtos/AddressDto.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Services/ClientManagementService.cs">
     <Files>
-      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="24" Column="59" />
-      <File FileName="Infrastructure/Configurations/PhoneConfiguration.cs" Line="24" Column="2" />
-      <File FileName="Api/Startup.cs" Line="30" Column="37" />
-      <File FileName="Api/Properties/launchSettings.json" Line="1" Column="1" />
-      <File FileName="Api/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Api/appsettings.json" Line="8" Column="30" />
-      <File FileName="Api/UseCases/CreateClientController.cs" Line="1" Column="1" />
-      <File FileName="Application/Dtos/AddressDto.cs" Line="1" Column="1" />
+      <File FileName="Application/Services/ClientManagementService.cs" Line="17" Column="134" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,9 +11,11 @@
           <Node name="ClientManagement" expanded="True">
             <Node name="1 - Presentation" expanded="True">
               <Node name="Api" expanded="True">
-                <Node name="Properties" expanded="True" />
-                <Node name="UseCases" expanded="True" />
+                <Node name="Controllers" expanded="True" />
               </Node>
+            </Node>
+            <Node name="2 - Application" expanded="True">
+              <Node name="Application" expanded="True" />
             </Node>
           </Node>
         </State>
