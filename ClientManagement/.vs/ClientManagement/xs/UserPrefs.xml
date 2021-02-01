@@ -1,18 +1,22 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Api/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Database/ApplicationDBContext.cs">
     <Files>
       <File FileName="Application/Services/ClientManagementService.cs" Line="44" Column="1" />
       <File FileName="Domain/Services/ClientService.cs" />
       <File FileName="Infrastructure/Repositories/ClientRepository.cs" />
       <File FileName="Application/Dtos/ClientDto.cs" />
       <File FileName="Domain/Interfaces/Services/IClientService.cs" />
-      <File FileName="Api/Program.cs" />
+      <File FileName="Api/Program.cs" Line="1" Column="1" />
       <File FileName="Api/Controllers/ClientManagementController.cs" />
-      <File FileName="Api/Startup.cs" />
+      <File FileName="Api/Startup.cs" Line="20" Column="31" />
       <File FileName="Api/Dockerfile" />
       <File FileName="Api/appsettings.json" />
       <File FileName="Api/Properties/launchSettings.json" Line="19" Column="7" />
+      <File FileName="Api/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Api/Configuration/AutoMapperConfiguration.cs" Line="13" Column="45" />
+      <File FileName="Application/AutoMapper/Configuration.cs" Line="6" Column="25" />
+      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,18 +24,33 @@
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
             <Node name="1 - Presentation" expanded="True">
-              <Node name="Api" expanded="True" selected="True">
-                <Node name="Properties" expanded="True" />
+              <Node name="Api" expanded="True">
+                <Node name="Configuration" expanded="True" />
                 <Node name="appsettings.json" expanded="True" />
               </Node>
             </Node>
             <Node name="2 - Application" expanded="True">
               <Node name="Application" expanded="True">
+                <Node name="AutoMapper" expanded="True" />
                 <Node name="Services" expanded="True" />
               </Node>
             </Node>
             <Node name="3  - Domain" expanded="True">
-              <Node name="Domain" expanded="True" />
+              <Node name="Domain" expanded="True">
+                <Node name="Entities" expanded="True" />
+                <Node name="Interfaces" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="4 - Infra" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="Infra.Data" expanded="True">
+                  <Node name="Configurations" expanded="True" />
+                  <Node name="Database" expanded="True">
+                    <Node name="ApplicationDBContext.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

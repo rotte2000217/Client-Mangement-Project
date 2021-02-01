@@ -24,10 +24,5 @@ namespace Infrastructure
            modelBuilder.ApplyConfiguration(new AddressConfiguration());
            modelBuilder.ApplyConfiguration(new PhoneConfiguration());
         }
-
-        internal Task FindAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
