@@ -15,7 +15,7 @@ export const InitialAddress = {
         streetFeedback: AddressSectionResources.emptyField,
         validneighborhood: false,
         neighborhoodFeedback: AddressSectionResources.emptyField,
-        validCity: false,
+        validcity: false,
         cityFeedback: AddressSectionResources.emptyField,
         validstreetNumber: false,
         streetNumberFeedback: AddressSectionResources.emptyField,

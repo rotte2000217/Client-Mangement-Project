@@ -32,7 +32,6 @@ export default class AddressSection extends React.Component {
 
     isValidSection = () => {
         const { Data } = this.state;
-
         let isValid = true;
         Data.forEach((address) => {
             for (var [_key, value] of Object.entries(address.Validations)) {
@@ -91,7 +90,7 @@ export default class AddressSection extends React.Component {
 
         let isValid = true;
         let newData = Data;
-        newData[index].Address.Street = value;
+        newData[index].Address.street = value;
         
         if (value === '') {
             isValid = false;
@@ -114,7 +113,6 @@ export default class AddressSection extends React.Component {
             isValid = false;
             newData[index].Validations.cityFeedback = AddressSectionResources.emptyField;
         }
-
         newData[index].Validations.validcity = isValid;
 
         this.setState({Data: newData});
@@ -190,7 +188,7 @@ export default class AddressSection extends React.Component {
                                     helperText={!entry.Validations.validStreet && entry.Validations.streetFeedback}
                                     className="text-field-full"
                                     label="Rua"
-                                    value={entry.Address.Street}
+                                    value={entry.Address.street}
                                     onChange={(e) => this.editStreet(e.target.value, index)}
                                 />
                                 <TextField
