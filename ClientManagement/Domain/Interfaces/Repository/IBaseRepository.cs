@@ -9,7 +9,7 @@ namespace Domain.Interfaces.Services
     {
         Task<TEntity> AddAsync(TEntity entity);
         Task<TEntity> GetByIdAsync(int id);
-        Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<List<TEntity>> GetAllAsync();
         void Update(TEntity entity);
         void Delete(int id); 
     }

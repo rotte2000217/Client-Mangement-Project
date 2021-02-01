@@ -1,5 +1,4 @@
-html, body {
-  width: 100%;
+html, body, body > div, .app {
   height: 100%;
 }
 
@@ -30,6 +29,14 @@ html, body {
   height: 100%;
 }
 
+.circular-list {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .center-align {
   display: flex;
   height: 100%;
@@ -44,4 +51,8 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: auto;
+}
+
+.whole-width {
+  width: 100%;
 }

@@ -3,7 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import PersonIcon from '@material-ui/icons/Person';
 import PaymentIcon from '@material-ui/icons/Payment';
-import EmailIcon from '@material-ui/icons/Email';
 import Card from '@material-ui/core/Card';
 
 export default function ContactCard(props) {

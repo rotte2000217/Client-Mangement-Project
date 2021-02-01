@@ -10,12 +10,10 @@ namespace Infra.Data.Repositories.Base
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
-        private readonly ApplicationDBContext _applicationDBContext;
         private readonly DbSet<TEntity> DbSet;
 
         public BaseRepository(ApplicationDBContext applicationDBContext)
         {
-            _applicationDBContext = applicationDBContext;
             DbSet = applicationDBContext.Set<TEntity>();
         }
 
@@ -31,7 +29,7 @@ namespace Infra.Data.Repositories.Base
             return result;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public async Task<List<TEntity>> GetAllAsync()
         {
             var result = await DbSet.ToListAsync();
             return result;

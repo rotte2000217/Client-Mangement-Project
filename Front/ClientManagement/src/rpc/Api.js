@@ -27,7 +27,6 @@ export class Api {
     }
 
     static createClient = (info) => {
-        console.log('teste', info);
         const response = Rpc.fetchPostMethod(
             serviceAddress,
             createClient,
@@ -39,7 +38,7 @@ export class Api {
     static updateClient = (info) => {
         const response = Rpc.fetchPutMethod(
             serviceAddress,
-            updateClient + info.Id,
+            updateClient,
             info
         );
         return Rpc.getResponse(response);

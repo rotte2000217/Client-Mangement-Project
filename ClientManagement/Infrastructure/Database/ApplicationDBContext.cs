@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Domain.Entities;
 using Infra.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,11 @@ namespace Infrastructure
            modelBuilder.ApplyConfiguration(new ClientConfiguration());
            modelBuilder.ApplyConfiguration(new AddressConfiguration());
            modelBuilder.ApplyConfiguration(new PhoneConfiguration());
+        }
+
+        internal Task FindAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

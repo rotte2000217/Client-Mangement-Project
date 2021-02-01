@@ -1,0 +1,8 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/bin/Release/netstandard2.1/Domain.deps.json
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/bin/Release/netstandard2.1/Domain.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/bin/Release/netstandard2.1/Domain.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/Release/netstandard2.1/Domain.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/Release/netstandard2.1/Domain.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/Release/netstandard2.1/Domain.csproj.CoreCompileInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/Release/netstandard2.1/Domain.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/Release/netstandard2.1/Domain.pdb

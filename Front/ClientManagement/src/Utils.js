@@ -1,14 +1,14 @@
 export class Utils {
     static getSummaryFromClientDetails = (item) => {
         console.log({
-            Id: item.Id,
-            Document: item.Document,
-            FullName: item.FullName,
+            id: item.id,
+            document: item.document,
+            fullName: item.fullName,
         })
         return {
-            Id: item.Id,
-            Document: item.Document,
-            FullName: item.FullName,
+            id: item.id,
+            document: item.document,
+            fullName: item.fullName,
         };
     }
 

@@ -19,7 +19,7 @@ namespace Domain.Services
 
         public async Task<Client> FindByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _repository.GetClientDetailed(id);
         }
 
         public async Task<IEnumerable<Client>> GetAllAsync()
@@ -32,9 +32,16 @@ namespace Domain.Services
             return await _repository.AddAsync(client);
         }
 
-        public void Update(Client client)
+        public async Task UpdateAsync(Client client)
         {
-            _repository.Update(client);
+            var clientDB = await FindByIdAsync(client.Id);
+            clientDB.Phones.Clear();
+            clientDB.Emails.Clear();
+            clientDB.Addresses.Clear();
+            client.Emails.ForEach(x => clientDB.Emails.Add(x));
+            client.Addresses.ForEach(x => clientDB.Addresses.Add(x));
+            client.Phones.ForEach(x => clientDB.Phones.Add(x));
+            _repository.Update(clientDB);
         }
 
         public void Delete(int id)

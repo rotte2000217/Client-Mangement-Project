@@ -30,41 +30,41 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("Summary/List")]
-        public ActionResult GetClientSummaryList()
+        public async System.Threading.Tasks.Task<ActionResult> GetClientSummaryListAsync()
         {
-            var clientList = _clientManagementService.ListAllAsync();
+            var clientList = await _clientManagementService.ListAllAsync();
             return Ok(clientList);
 
         }
 
         [HttpGet]
         [Route("{id?}")]
-        public ActionResult GetDetailedClient(int id)
+        public async System.Threading.Tasks.Task<ActionResult> GetDetailedClientAsync(int id)
         {
-            var clientList = _clientManagementService.GetByIdAsync(id);
+            var clientList = await _clientManagementService.GetByIdAsync(id);
             return Ok(clientList);
 
         }
 
         [HttpPost]
-        public ActionResult CreateClient(ClientDto client)
+        public async System.Threading.Tasks.Task<ActionResult> CreateClient(ClientDto client)
         {
-            _clientManagementService.RegisterAsync(client);
+            await _clientManagementService.RegisterAsync(client);
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id?}")]
-        public ActionResult DeleteClient(int id)
+        public async System.Threading.Tasks.Task<ActionResult> DeleteClient(int id)
         {
-            _clientManagementService.Delete(id);
+            await _clientManagementService.Delete(id);
             return Ok();
         }
 
         [HttpPut]
-        public ActionResult UpdateClient(ClientDto client)
+        public async System.Threading.Tasks.Task<ActionResult> UpdateClient(ClientDto client)
         {
-            _clientManagementService.Update(client);
+            await _clientManagementService.Update(client);
             return Ok();
 
         }

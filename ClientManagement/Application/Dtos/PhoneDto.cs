@@ -6,6 +6,6 @@ namespace Application.Dtos
         public string CountryCode { get; set; }
         public string AreaCode { get; set; }
         public string Number { get; set; }
-        public ePhoneType Type { get; set; }
+        public ePhoneTypeDto Type { get; set; }
     }
 }

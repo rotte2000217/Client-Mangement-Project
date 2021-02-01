@@ -10,7 +10,7 @@ namespace Application.Interfaces
         Task<int> RegisterAsync(ClientDto clientDto);
         Task<List<ClientSummaryDto>> ListAllAsync();
         Task<ClientDto> GetByIdAsync(int id);
-        void Update(ClientDto dto);
-        void Delete(int id);
+        Task<bool> Update(ClientDto dto);
+        Task<bool> Delete(int id);
     }
 }

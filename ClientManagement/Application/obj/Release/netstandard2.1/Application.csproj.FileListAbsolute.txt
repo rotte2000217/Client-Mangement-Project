@@ -1,0 +1,14 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Application.deps.json
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Application.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Application.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Domain.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Infra.Data.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Infra.Data.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/bin/Release/netstandard2.1/Domain.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.csprojAssemblyReference.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.csproj.CoreCompileInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.csproj.CopyComplete
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/Release/netstandard2.1/Application.pdb

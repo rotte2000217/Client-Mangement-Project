@@ -1,28 +1,34 @@
 import './Modal.css';
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import ClearIcon from '@material-ui/icons/Clear';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import Card from '@material-ui/core/Card';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import { Api } from '../../rpc/Api';
+import EmailSection from '../EmailSection/EmailSection';
+import PhoneSection from '../PhoneSection/PhoneSection';
+import AddressSection from '../AddressSection/AddressSection';
+import GeneralSection from '../GeneralSection/GeneralSection';
+import Button from '@material-ui/core/Button';
+import moment from "moment";
 
 export default class ContactModal extends React.Component {
   constructor(props) {
     super(props);
+
+    this.emailSection = React.createRef();
+    this.phoneSection = React.createRef();
+    this.addressSection = React.createRef();
+    this.generalSection = React.createRef();
+
     this.state = {
       info: {
-        Id: undefined,
-        FullName: '',
-        Document: '',
-        Birthday: '',
-        MotherName: '',
-        FatherName: '',
-        Emails: [],
-        Addresses: [],
-        Phones: []
+        id: undefined,
+        fullName: '',
+        document: '',
+        birthday: moment().unix(),
+        motherName: '',
+        fatherName: '',
+        emails: [],
+        addresses: [],
+        phones: []
       },
       loading: false
     }
@@ -32,15 +38,19 @@ export default class ContactModal extends React.Component {
     const { selectedPersonSummary } = this.props;
 
     if(!!selectedPersonSummary) {
-      this.getClientDetails(selectedPersonSummary?.Id);
+      this.getClientDetails(selectedPersonSummary?.id);
     }
   }
 
   saveClient = () => {
-    if(!!this.props.selectedPersonSummary) {
-      this.updateClient();
+    if (!this.isValidInput) {
+      alert('Por favor corrija os campos antes de salvar');
     } else {
-      this.createClient();
+      if(!!this.props.selectedPersonSummary) {
+        this.updateClient();
+      } else {
+        this.createClient();
+      }
     }
   }
 
@@ -59,11 +69,11 @@ export default class ContactModal extends React.Component {
     const { selectedPersonSummary, removeFromList, closeModal } = this.props;
     this.setState({...this.state, loading: true});
 
-    const response = await Api.deleteClient(selectedPersonSummary?.Id);
+    const response = await Api.deleteClient(selectedPersonSummary?.id);
   
     if (!!response) {
       this.setState({...this.state, loading: false});
-      removeFromList(selectedPersonSummary?.Id);
+      removeFromList(selectedPersonSummary?.id);
       closeModal();
     } else {
       alert('Não foi possível deletar as informações do cliente.');
@@ -72,10 +82,9 @@ export default class ContactModal extends React.Component {
   }
 
   async createClient() {
-    const { info } = this.state;
     this.setState({...this.state, loading: true});
   
-    const clientInfo = await Api.createClient(info);
+    const clientInfo = await Api.createClient(this.getClientInfo());
     if (!!clientInfo) {
       this.setState({...this.state, loading: false});
       this.props.addToList(clientInfo);
@@ -87,13 +96,13 @@ export default class ContactModal extends React.Component {
   }
 
   async updateClient() {
-    const { info } = this.state;
     const { updateList, closeModal } = this.props;
 
     this.setState({...this.state, loading: true});
-    const response = await Api.updateClient(info);
+    const clientInfo = this.getClientInfo()
+    const response = await Api.updateClient(clientInfo);
     if (!!response) {
-      updateList(info);
+      updateList(clientInfo);
       closeModal();
     } else {
       alert('Não foi possível salvar as informações do cliente.');
@@ -101,191 +110,74 @@ export default class ContactModal extends React.Component {
     this.setState({...this.state, loading: false});
   }
 
-  addPhone = () => {
+  getClientInfo() {
     const { info } = this.state;
-    const { Phones } = info;
-    console.log(this.state);
-    let newPhones = Phones;
-    newPhones.push({CountryCode: '', AreaCode: '', Number: '', Type: undefined});
-    this.setState({...this.state, info: {...info, Phones: newPhones} });
+    
+    const emails = [];
+    this.emailSection.current.state.Data.forEach((entry) => {
+      emails.push(entry.Email);
+    });
+
+    const phones = [];
+    this.phoneSection.current.state.Data.forEach((entry) => {
+      phones.push(entry.phone);
+    });
+
+    const addresses = [];
+    this.addressSection.current.state.Data.forEach((entry) => {
+      addresses.push(entry.Address);
+    });
+
+    const generalInfo = this.generalSection.current.state;
+    const { 
+      fullName,
+      document,
+      birthday,
+      motherName,
+      fatherName
+    } = generalInfo;
+
+    return {
+      ...info,
+      fullName,
+      document,
+      birthday,
+      motherName,
+      fatherName,
+      emails: emails,
+      addresses: addresses,
+      phones: phones
+    };
   }
 
-  addEmail = () => {
-    const { info } = this.state;
-    const { Emails } = info;
-
-    let newEmails = Emails;
-    newEmails.push({EmailAddress: ""});
-    this.setState({...this.state, info: {...info, Emails: newEmails} });
-  }
-
-  editEmailAddress = (value, index) => {
-    const { info } = this.state;
-    const { Emails } = info;
-
-    let newEmails = Emails;
-    newEmails[index].EmailAddress = value;
-    this.setState({...this.state, info: {...info, Emails: newEmails} });
-  }
-
-  editPhoneNumber = (value, index) => {
-    const { info } = this.state;
-    const { Phones } = info;
-
-    let newPhones = Phones;
-    newPhones[index].Number = value;
-    this.setState({...this.state, info: {...info, Phones: newPhones} });
-  }
-
-  editCountryCode = (value, index) => {
-    const { info } = this.state;
-    const { Phones } = info;
-
-    let newPhones = Phones;
-    newPhones[index].CountryCode = value;
-    this.setState({...this.state, info: {...info, Phones: newPhones} });
-  }
-
-  editAreaCode = (value, index) => {
-    const { info } = this.state;
-    const { Phones } = info;
-
-    let newPhones = Phones;
-    newPhones[index].AreaCode = value;
-    this.setState({...this.state, info: {...info, Phones: newPhones} });
-  }
-
-  editPhoneType = (value, index) => {
-    const { info } = this.state;
-    const { Phones } = info;
-
-    let newPhones = Phones;
-    newPhones[index].Type = value;
-    this.setState({...this.state, info: {...info, Phones: newPhones} });
-  }
-
-  addAddress = () => {
-    const { info } = this.state;
-    const { Addresses } = info;
-
-    let newAddresses = Addresses;
-    newAddresses.push({Street: '', Neighborhood: '', City: '', StreetNumber: '', ZipCode: ''});
-    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
-  }
-
-  editStreet = (value, index) => {
-    const { info } = this.state;
-    const { Addresses } = info;
-
-    let newAddresses = Addresses;
-    newAddresses[index].Street = value;
-    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
-  }
-
-  editCity = (value, index) => {
-    const { info } = this.state;
-    const { Addresses } = info;
-
-    let newAddresses = Addresses;
-    newAddresses[index].City = value;
-    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
-  }
-
-  editZipCode = (value, index) => {
-    const { info } = this.state;
-    const { Addresses } = info;
-
-    let newAddresses = Addresses;
-    newAddresses[index].ZipCode = value;
-    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
-  }
-
-  editAddressNumber = (value, index) => {
-    const { info } = this.state;
-    const { Addresses } = info;
-
-    let newAddresses = Addresses;
-    newAddresses[index].StreetNumber = value;
-    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
-  }
-
-  editNeighborhood = (value, index) => {
-    const { info } = this.state;
-    const { Addresses } = info;
-
-    let newAddresses = Addresses;
-    newAddresses[index].Neighborhood = value;
-    this.setState({...this.state, info: {...info, Addresses: newAddresses} });
-  }
-
-  removePhone = (index) => {
-    if ( window.confirm("Tem certeza que seja remover esta entrada?")) {
-      const { info } = this.state;
-      const { Phones } = info;
-
-      let newPhones = Phones;
-      newPhones.splice(index, 1)
-      this.setState({...this.state, info: {...info, Phones: newPhones} });
+  isValidInput() {
+    if (!this.emailSection.current.isValidSection()) {
+      return false;
     }
-  }
 
-  removeAddress = (index) => {
-    if ( window.confirm("Tem certeza que seja remover esta entrada?")) {
-      const { info } = this.state;
-      const { Addresses } = info;
-
-      let newAddresses = Addresses;
-      newAddresses.splice(index, 1)
-      this.setState({...this.state, info: {...info, Addresses: newAddresses} });
+    if (!this.generalSection.current.isValidSection()) {
+      return false;
     }
-  }
 
-  removeEmail = (index) => {
-    if ( window.confirm("Tem certeza que seja remover esta entrada?")) {
-      const { info } = this.state;
-      const { Emails } = info;
-
-      let newEmails = Emails;
-      newEmails.splice(index, 1)
-      this.setState({...this.state, info: {...info, Emails: newEmails} });
+    if (!this.addressSection.current.isValidSection()) {
+      return false;
     }
-  }
 
-  editName = (value) => {
-    const { info } = this.state;
-    this.setState({...this.state, info: {...info, FullName: value} });
-  }
+    if (!this.phoneSection.current.isValidSection()) {
+      return false;
+    }
 
-  editDocument = (value) => {
-    const { info } = this.state;
-    this.setState({...this.state, info: {...info, Document: value} });
-  }
-
-  editBirthday = (value) => {
-    const { info } = this.state;
-    this.setState({...this.state, info: {...info, Birthday: value} });
-  }
-
-  editMotherName = (value) => {
-    const { info } = this.state;
-    this.setState({...this.state, info: {...info, MotherName: value} });
-  }
-
-  editFatherName = (value) => {
-    const { info } = this.state;
-    this.setState({...this.state, info: {...info, FatherName: value} });
+    return true;
   }
 
   render() {
     const { info, loading } = this.state;
-    const { Addresses, Emails, Phones } = info;
+    const { addresses, emails, phones, fullName, document, birthday, motherName, fatherName } = info;
 
     if (loading) {
       return (
-        <div className="modal-container">
-          <div className="center-align">
-            <CircularProgress />
-          </div>
+        <div className="spinner-container">
+          <CircularProgress />
         </div>
       )
     }
@@ -293,73 +185,24 @@ export default class ContactModal extends React.Component {
     return (
       <div className="modal-container">
         <div className="save-delete-container">
-          <p className="save-delete-text" onClick={() => this.deleteClient()}>Deletar</p>
-          <p className="save-delete-text" onClick={() => this.saveClient()}>Salvar</p>
+          <Button variant="contained" color="primary" onClick={() => this.deleteClient()}>
+            Deletar
+          </Button>
+          <Button variant="contained" color="primary" onClick={() => this.saveClient()}>
+            Salvar
+          </Button>
         </div>
-        <h2>Dados pessoais</h2>
-        <div className="text-field-container">
-          <TextField className="text-field" label="Nome" value={this.state.info.FullName} onChange={(e) => this.editName(e.target.value)}/>
-          <TextField className="text-field" label="Cpf" value={this.state.info.Document} onChange={(e) => this.editDocument(e.target.value)}/>
-          <TextField className="text-field" label="Data de nascimento" value={this.state.info.Birthday} onChange={(e) => this.editBirthday(e.target.value)}/>
-          <TextField className="text-field" label="Nome da mãe" value={this.state.info.MotherName} onChange={(e) => this.editMotherName(e.target.value)}/>
-          <TextField className="text-field" label="Nome do pai" value={this.state.info.FatherName} onChange={(e) => this.editFatherName(e.target.value)}/>
-        </div>
-
-        <div className="label-field-container"><h2>Telefone</h2><AddCircleOutlineIcon className="add-icon" onClick={() => this.addPhone()}/></div>
-        <div className="text-field-container">
-        {Phones.map((entry, index) => (
-          <Card className="additional-field">
-            <div>
-              <TextField className="text-field-full" label="Código do pais"  value={entry.CountryCode} onChange={(e) => this.editCountryCode(e.target.value, index)}/>
-              <TextField className="text-field-full" label="Código de área"  value={entry.AreaCode} onChange={(e) => this.editAreaCode(e.target.value, index)}/>
-              <TextField className="text-field-full" label="Número"  value={entry.Number} onChange={(e) => this.editPhoneNumber(e.target.value, index)}/>
-              <Select
-                className="text-field-full"
-                labelId="Tipo"
-                value={entry.Type}
-                onChange={(e) => this.editPhoneType(e.target.value, index)}
-              >
-                <MenuItem value={0}>Celular</MenuItem>
-                <MenuItem value={1}>Trabalho</MenuItem>
-                <MenuItem value={2}>Casa</MenuItem>
-                <MenuItem value={3}>Outro</MenuItem>
-              </Select>
-            </div>
-            <ClearIcon className="pointer-icon" onClick={() => this.removePhone()}/>
-          </Card>
-        ))}
-        </div>
-
-        <div className="label-field-container"><h2>Email</h2> <AddCircleOutlineIcon className="add-icon" onClick={() => this.addEmail()}/></div>
-        <div className="text-field-container">
-        {Emails.map((entry, index) => (
-          <Card className="additional-field">
-            <TextField className="text-field-full" label="Email" value={entry.EmailAddress} onChange={(e) => this.editEmailAddress(e.target.value, index)}/>
-            <ClearIcon className="pointer-icon" onClick={() => this.removeEmail()}/>
-          </Card>
-        ))}
-        </div>
-
-        <div className="label-field-container "> <h2>Endereço</h2> <AddCircleOutlineIcon className="add-icon" onClick={() => this.addAddress()}/></div>
-        <div className="text-field-container">
-          {Addresses.map((entry, index) => (
-            <Card key={"" + index} className="address-container">
-              <div className="address-cell-container">
-                <TextField className="text-field-full" label="CEP" value={entry.ZipCode} onChange={(e) => this.editZipCode(e.target.value, index)}/>
-                <TextField
-                  className="text-field-full"
-                  label="Rua"
-                  value={entry.Street}
-                  onChange={(e) => this.editStreet(e.target.value, index)}
-                />
-                <TextField className="text-field-full" label="Número" value={entry.StreetNumber} onChange={(e) => this.editAddressNumber(e.target.value, index)}/>
-                <TextField className="text-field-full" label="Bairro" value={entry.Neighborhood} onChange={(e) => this.editNeighborhood(e.target.value, index)}/>
-                <TextField className="text-field-full" label="Cidade" value={entry.City} onChange={(e) => this.editCity(e.target.value, index)}/>
-              </div>
-              <ClearIcon className="pointer-icon" onClick={() => this.removeAddress(index)}/>
-            </Card>
-          ))}
-        </div>
+        <GeneralSection
+          ref={this.generalSection}
+          fullName={fullName}
+          document={document}
+          birthday={birthday}
+          motherName={motherName}
+          fatherName={fatherName}
+        />
+        <PhoneSection phones={phones} ref={this.phoneSection}/>
+        <EmailSection emails={emails} ref={this.emailSection}/>
+        <AddressSection addresses={addresses} ref={this.addressSection}/>
       </div>
     );
   }

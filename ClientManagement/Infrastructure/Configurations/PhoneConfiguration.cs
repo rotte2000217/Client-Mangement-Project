@@ -17,6 +17,9 @@ namespace Infra.Data.Configurations
             builder.Property(e => e.AreaCode).HasMaxLength(2);
             builder.Property(e => e.CountryCode).HasMaxLength(2);
             builder.Property(e => e.Number).HasMaxLength(9);
+            builder.Property(e => e.AreaCode).IsRequired();
+            builder.Property(e => e.CountryCode).IsRequired();
+            builder.Property(e => e.Number).IsRequired();
             builder.HasOne(e => e.Client);
 
         }

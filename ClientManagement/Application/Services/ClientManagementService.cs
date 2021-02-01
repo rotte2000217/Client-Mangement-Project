@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.Dtos;
 using Application.Interfaces;
+using AutoMapper;
+using Domain.Entities;
 using Domain.Interfaces.Services;
 using Microsoft.Extensions.Logging;
 
@@ -12,41 +14,46 @@ namespace Application.Services
     {
         private readonly ILogger<ClientManagementService> _logger;
         private readonly IClientService _clientService;
+        private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ClientManagementService(ILogger<ClientManagementService> logger, IClientService clientService, IUnitOfWork unitOfWork)
+        public ClientManagementService(ILogger<ClientManagementService> logger, IClientService clientService, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _logger = logger;
             _clientService = clientService;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
-        public Task<int> RegisterAsync(ClientDto clientDto)
+        public async Task<int> RegisterAsync(ClientDto clientDto)
         {
-            var clientId = _clientService.RegisterAsync(null); //convert clientDto to expected object
-            return null;
+            var client = await _clientService.RegisterAsync(_mapper.Map<Client>(clientDto));
+            await _unitOfWork.CommitAsync();
+            return client.Id;
         }
 
-        public Task<List<ClientSummaryDto>> ListAllAsync()
+        public async Task<List<ClientSummaryDto>> ListAllAsync()
         {
-            var clientSummaryList = _clientService.GetAllAsync();
-            return null;
+            var clients = await _clientService.GetAllAsync();
+            return _mapper.Map<List<ClientSummaryDto>>(clients);
         }
 
-        public Task<ClientDto> GetByIdAsync(int id)
+        public async Task<ClientDto> GetByIdAsync(int id)
         {
-            var clientDto = _clientService.FindByIdAsync(id);
-            return null; //MAPPING ?? 
+            var client = await _clientService.FindByIdAsync(id);
+            return _mapper.Map <ClientDto> (client);
         }
 
-        public void Update(ClientDto dto)
+        public async Task<bool> Update(ClientDto dto)
         {
-            _clientService.Update(null); //convert dto to expected object
+            await _clientService.UpdateAsync(_mapper.Map<Client>(dto));
+            return await _unitOfWork.CommitAsync();
         }
 
-        public void Delete(int id)
+        public async Task<bool> Delete(int id)
         {
             _clientService.Delete(id);
+            return await _unitOfWork.CommitAsync();
         }
     }
 }

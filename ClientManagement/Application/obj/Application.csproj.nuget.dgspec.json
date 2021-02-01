@@ -14,7 +14,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -42,9 +42,17 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[3.1.11, )"
             }
           },
           "imports": [
@@ -76,7 +84,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -128,7 +136,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"

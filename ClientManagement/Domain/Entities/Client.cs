@@ -14,10 +14,10 @@ namespace Domain.Entities
 
         public string FatherName { get; set; }
 
-        public IEnumerable<Email> Emails { get; set; }
+        public List<Email> Emails { get; set; }
 
-        public IEnumerable<Phone> Phones { get; set; }
+        public List<Phone> Phones { get; set; }
 
-        public IEnumerable<Address> Addresses { get; set; }
+        public List<Address> Addresses { get; set; }
     }
 }

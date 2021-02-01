@@ -11,6 +11,9 @@ import Modal from '@material-ui/core/Modal';
 import ContactModal from './components/Modal/Modal';
 import { Utils } from './Utils';
 import { Api } from './rpc/Api';
+import moment from "moment";
+
+moment.locale('pt-BR');
 
 export default class App extends React.Component {
   constructor(props) {
@@ -49,7 +52,7 @@ export default class App extends React.Component {
     const { clientCardList } = this.state;
 
     let newList = Utils.objectClone(clientCardList);
-    newList = newList.filter((value) => value.Id !== id);
+    newList = newList.filter((value) => value.id !== id);
     this.setState({...this.state, clientCardList: newList})
   }
 
@@ -65,7 +68,7 @@ export default class App extends React.Component {
     const { clientCardList } = this.state;
 
     let newList = Utils.objectClone(clientCardList);
-    newList = newList.map(entry => entry.Id === item.Id ? Utils.getSummaryFromClientDetails(item) : entry);
+    newList = newList.map(entry => entry.id === item.id ? Utils.getSummaryFromClientDetails(item) : entry);
     this.setState({...this.state, clientCardList: newList});
   }
 
@@ -81,15 +84,15 @@ export default class App extends React.Component {
           </Toolbar>
         </AppBar>
   
-        <div className="content-container">
+        <div>
           {loading ? (
-            <div className="center-align">
+            <div className="circular-list">
               <CircularProgress />
             </div>
           ) : (
-            <div>
+            <div className="content-container">
               {!!clientCardList && clientCardList.map((clientInfo) => (
-                <ContactCard key={clientInfo.Id} name={clientInfo.FullName} document={clientInfo.Document} openModal={() => this.openModal(clientInfo)}/>
+                <ContactCard key={clientInfo.id} name={clientInfo.fullName} document={clientInfo.document} openModal={() => this.openModal(clientInfo)}/>
               ))}
             </div>
           )}

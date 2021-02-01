@@ -1,0 +1,16 @@
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Infra.CrossCutting.IoC.deps.json
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Infra.CrossCutting.IoC.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Infra.CrossCutting.IoC.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Application.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Domain.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Infra.Data.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Domain.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Infra.Data.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/bin/Debug/netstandard2.1/Application.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.csprojAssemblyReference.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.AssemblyInfoInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.AssemblyInfo.cs
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.csproj.CoreCompileInputs.cache
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.csproj.CopyComplete
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/Debug/netstandard2.1/Infra.CrossCutting.IoC.pdb

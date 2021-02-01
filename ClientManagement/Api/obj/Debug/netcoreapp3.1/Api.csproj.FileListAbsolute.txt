@@ -57,3 +57,7 @@
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infra.Data.dll
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infra.Data.pdb
 /Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Domain.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infra.CrossCutting.IoC.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/Infra.CrossCutting.IoC.pdb
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/AutoMapper.dll
+/Users/felixruan/Desktop/ClientProject/ClientManagement/Api/bin/Debug/netcoreapp3.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

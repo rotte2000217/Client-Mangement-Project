@@ -10,7 +10,7 @@ namespace Domain.Interfaces.Services
         Task<Client> FindByIdAsync(int id);
         Task<IEnumerable<Client>> GetAllAsync();
         Task<Client> RegisterAsync(Client client);
-        void Update(Client client);
+        Task UpdateAsync(Client client);
         void Delete(int id);
     }
 }
