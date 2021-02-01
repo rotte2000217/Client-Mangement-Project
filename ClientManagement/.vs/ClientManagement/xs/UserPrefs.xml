@@ -1,10 +1,21 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Repositories/ClientRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Configurations/AddressConfiguration.cs">
     <Files>
       <File FileName="Api/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Api/appsettings.json" Line="8" Column="30" />
+      <File FileName="Api/appsettings.json" Line="3" Column="184" />
       <File FileName="Infrastructure/Repositories/ClientRepository.cs" Line="32" Column="1" />
+      <File FileName="Domain/Services/ClientService.cs" Line="32" Column="44" />
+      <File FileName="Api/Startup.cs" Line="47" Column="13" />
+      <File FileName="Infrastructure/Configurations/EmailConfiguration.cs" Line="21" Column="1" />
+      <File FileName="Infrastructure/Configurations/ClientConfigurations.cs" Line="26" Column="2" />
+      <File FileName="Infrastructure/Configurations/PhoneConfiguration.cs" Line="20" Column="43" />
+      <File FileName="Infrastructure/Configurations/AddressConfiguration.cs" Line="22" Column="2" />
+      <File FileName="Api/Controllers/ClientManagementController.cs" Line="52" Column="53" />
+      <File FileName="Application/Interfaces/IClientManagementService.cs" Line="10" Column="27" />
+      <File FileName="Application/Services/ClientManagementService.cs" Line="33" Column="10" />
+      <File FileName="Infrastructure/Repositories/Base/BaseRepository.cs" Line="22" Column="41" />
+      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,13 +24,13 @@
           <Node name="ClientManagement" expanded="True">
             <Node name="1 - Presentation" expanded="True">
               <Node name="Api" expanded="True">
-                <Node name="Configuration" expanded="True" />
-                <Node name="appsettings.json" expanded="True" />
+                <Node name="Controllers" expanded="True" />
               </Node>
             </Node>
             <Node name="2 - Application" expanded="True">
               <Node name="Application" expanded="True">
                 <Node name="AutoMapper" expanded="True" />
+                <Node name="Interfaces" expanded="True" />
                 <Node name="Services" expanded="True" />
               </Node>
             </Node>
@@ -31,12 +42,15 @@
               </Node>
             </Node>
             <Node name="4 - Infra" expanded="True">
+              <Node name="CrossCutting" expanded="True" />
               <Node name="Data" expanded="True">
                 <Node name="Infra.Data" expanded="True">
-                  <Node name="Configurations" expanded="True" />
+                  <Node name="Configurations" expanded="True">
+                    <Node name="AddressConfiguration.cs" selected="True" />
+                  </Node>
                   <Node name="Database" expanded="True" />
                   <Node name="Repositories" expanded="True">
-                    <Node name="ClientRepository.cs" selected="True" />
+                    <Node name="Base" expanded="True" />
                   </Node>
                 </Node>
               </Node>
@@ -50,7 +64,7 @@
   <DisabledProjects>
     <String>docker-compose.dcproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Services/ClientManagementService.cs" relfile="Application/Services/ClientManagementService.cs" line="50" column="13" />
@@ -58,6 +72,8 @@
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Repositories/Base/BaseRepository.cs" relfile="Infrastructure/Repositories/Base/BaseRepository.cs" line="29" column="13" />
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/Services/ClientService.cs" relfile="Domain/Services/ClientService.cs" line="22" column="13" />
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/Services/ClientService.cs" relfile="Domain/Services/ClientService.cs" line="48" column="13" />
+      <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Services/ClientManagementService.cs" relfile="Application/Services/ClientManagementService.cs" line="32" column="13" />
+      <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Services/ClientManagementService.cs" relfile="Application/Services/ClientManagementService.cs" line="31" column="13" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

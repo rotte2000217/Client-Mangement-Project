@@ -13,11 +13,11 @@ namespace Infra.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    FullName = table.Column<string>(maxLength: 255, nullable: true),
-                    Document = table.Column<string>(maxLength: 11, nullable: true),
-                    Birthday = table.Column<string>(maxLength: 10, nullable: true),
-                    MotherName = table.Column<string>(maxLength: 255, nullable: true),
-                    FatherName = table.Column<string>(maxLength: 255, nullable: true)
+                    FullName = table.Column<string>(nullable: true),
+                    Document = table.Column<string>(nullable: true),
+                    Birthday = table.Column<string>(nullable: true),
+                    MotherName = table.Column<string>(nullable: true),
+                    FatherName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -31,11 +31,11 @@ namespace Infra.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     ClientId = table.Column<int>(nullable: false),
-                    Street = table.Column<string>(maxLength: 255, nullable: true),
-                    Neighborhood = table.Column<string>(maxLength: 50, nullable: true),
-                    City = table.Column<string>(maxLength: 100, nullable: true),
-                    StreetNumber = table.Column<int>(maxLength: 50, nullable: false),
-                    ZipCode = table.Column<string>(maxLength: 8, nullable: true)
+                    Street = table.Column<string>(nullable: true),
+                    Neighborhood = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    StreetNumber = table.Column<int>(nullable: false),
+                    ZipCode = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,9 +75,9 @@ namespace Infra.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     ClientId = table.Column<int>(nullable: false),
-                    CountryCode = table.Column<string>(maxLength: 2, nullable: true),
-                    AreaCode = table.Column<string>(maxLength: 2, nullable: true),
-                    Number = table.Column<string>(maxLength: 9, nullable: true),
+                    CountryCode = table.Column<string>(nullable: false),
+                    AreaCode = table.Column<string>(nullable: false),
+                    Number = table.Column<string>(nullable: false),
                     Type = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -95,6 +95,12 @@ namespace Infra.Data.Migrations
                 name: "IX_Addresses_ClientId",
                 table: "Addresses",
                 column: "ClientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_Document",
+                table: "Clients",
+                column: "Document",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Emails_ClientId",

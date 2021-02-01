@@ -16,11 +16,6 @@ namespace Infra.Data.Configurations
             builder.Property(e => e.Street).HasColumnName("Street");
             builder.Property(e => e.StreetNumber).HasColumnName("StreetNumber");
             builder.Property(e => e.ZipCode).HasColumnName("ZipCode");
-            builder.Property(e => e.City).HasMaxLength(100);
-            builder.Property(e => e.Neighborhood).HasMaxLength(50);
-            builder.Property(e => e.Street).HasMaxLength(255);
-            builder.Property(e => e.StreetNumber).HasMaxLength(50);
-            builder.Property(e => e.ZipCode).HasMaxLength(8);
             builder.HasOne(e => e.Client);
         }
     }

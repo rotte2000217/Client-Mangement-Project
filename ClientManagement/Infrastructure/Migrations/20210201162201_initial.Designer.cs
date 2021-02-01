@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20210131024606_initial")]
+    [Migration("20210201162201_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,31 +27,26 @@ namespace Infra.Data.Migrations
 
                     b.Property<string>("City")
                         .HasColumnName("City")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100);
+                        .HasColumnType("text");
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
                     b.Property<string>("Neighborhood")
                         .HasColumnName("Neighborhood")
-                        .HasColumnType("varchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("text");
 
                     b.Property<string>("Street")
                         .HasColumnName("Street")
-                        .HasColumnType("varchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("text");
 
                     b.Property<int>("StreetNumber")
                         .HasColumnName("StreetNumber")
-                        .HasColumnType("int")
-                        .HasMaxLength(50);
+                        .HasColumnType("int");
 
                     b.Property<string>("ZipCode")
                         .HasColumnName("ZipCode")
-                        .HasColumnType("varchar(8)")
-                        .HasMaxLength(8);
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -69,30 +64,28 @@ namespace Infra.Data.Migrations
 
                     b.Property<string>("Birthday")
                         .HasColumnName("Birthday")
-                        .HasColumnType("varchar(10)")
-                        .HasMaxLength(10);
+                        .HasColumnType("text");
 
                     b.Property<string>("Document")
                         .HasColumnName("Document")
-                        .HasColumnType("varchar(11)")
-                        .HasMaxLength(11);
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("FatherName")
                         .HasColumnName("FatherName")
-                        .HasColumnType("varchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("text");
 
                     b.Property<string>("FullName")
                         .HasColumnName("FullName")
-                        .HasColumnType("varchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("text");
 
                     b.Property<string>("MotherName")
                         .HasColumnName("MotherName")
-                        .HasColumnType("varchar(255)")
-                        .HasMaxLength(255);
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Document")
+                        .IsUnique();
 
                     b.ToTable("Clients");
                 });
@@ -127,22 +120,22 @@ namespace Infra.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("AreaCode")
+                        .IsRequired()
                         .HasColumnName("AreaCode")
-                        .HasColumnType("varchar(2)")
-                        .HasMaxLength(2);
+                        .HasColumnType("text");
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
                     b.Property<string>("CountryCode")
+                        .IsRequired()
                         .HasColumnName("CountryCode")
-                        .HasColumnType("varchar(2)")
-                        .HasMaxLength(2);
+                        .HasColumnType("text");
 
                     b.Property<string>("Number")
+                        .IsRequired()
                         .HasColumnName("Number")
-                        .HasColumnType("varchar(9)")
-                        .HasMaxLength(9);
+                        .HasColumnType("text");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
