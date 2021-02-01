@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: /Users/felixruan/Desktop/ClientProject/ClientManagement
+      dockerfile: Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: api
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - /Users/felixruan/.aspnet/https:/root/.aspnet/https:ro
+    - /Users/felixruan/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'
