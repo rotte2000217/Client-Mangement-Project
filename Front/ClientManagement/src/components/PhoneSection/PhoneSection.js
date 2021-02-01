@@ -72,7 +72,7 @@ export default class PhoneSection extends React.Component {
 
         let isValid = true;
         let newData = Data;
-        newData[index].Phone.number = this.phoneMask(value);
+        newData[index].phone.number = this.phoneMask(value);
         
         if (value === '') {
             isValid = false;
@@ -94,7 +94,7 @@ export default class PhoneSection extends React.Component {
 
         let isValid = true;
         let newData = Data;
-        newData[index].Phone.countryCode = value;
+        newData[index].phone.countryCode = value;
         
         if (value === '') {
             isValid = false;
@@ -116,7 +116,7 @@ export default class PhoneSection extends React.Component {
 
         let isValid = true;
         let newData = Data;
-        newData[index].Phone.areaCode = value;
+        newData[index].phone.areaCode = value;
         
         if (value === '') {
             isValid = false;
@@ -137,7 +137,7 @@ export default class PhoneSection extends React.Component {
         const { Data } = this.state;
 
         let newData = Data;
-        newData[index].Phone.type = value;
+        newData[index].phone.type = value;
 
         this.setState({Data: newData});
     }
@@ -170,7 +170,7 @@ export default class PhoneSection extends React.Component {
                                 helperText={!entry.Validations.validcountryCode && entry.Validations.countryCodeFeedback}
                                 className="text-field-full"
                                 label="Código do pais"
-                                value={entry.Phone.countryCode}
+                                value={entry.phone.countryCode}
                                 onChange={(e) => this.editcountryCode(e.target.value, index)}
                             />
                             <TextField
@@ -178,7 +178,7 @@ export default class PhoneSection extends React.Component {
                                 helperText={!entry.Validations.validareaCode && entry.Validations.areaCodeFeedback}
                                 className="text-field-full"
                                 label="Código de área"
-                                value={entry.Phone.areaCode}
+                                value={entry.phone.areaCode}
                                 onChange={(e) => this.editareaCode(e.target.value, index)}
                             />
                             <TextField
@@ -186,13 +186,13 @@ export default class PhoneSection extends React.Component {
                                 helperText={!entry.Validations.validPhone && entry.Validations.phoneFeedback}
                                 className="text-field-full"
                                 label="Número"
-                                value={entry.Phone.number}
+                                value={entry.phone.number}
                                 onChange={(e) => this.editPhonenumber(e.target.value, index)}
                             />
                             <Select
                                 className="text-field-full"
                                 labelId="Tipo"
-                                value={entry.Phone.type}
+                                value={entry.phone.type}
                                 onChange={(e) => this.editPhonetype(e.target.value, index)}
                             >
                                 <MenuItem value={0}>Celular</MenuItem>

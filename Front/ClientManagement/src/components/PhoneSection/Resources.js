@@ -5,7 +5,7 @@ export const PhoneSectionResources = {
     emptyField: 'Este campo deve ser preenchido',
 }
 export const InitialPhone = {
-    Phone: {
+    phone: {
         countryCode: '',
         areaCode: '',
         number: '',

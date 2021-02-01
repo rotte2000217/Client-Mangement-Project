@@ -1,8 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { GeneralSectionResources } from './Resources';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import MomentUtils from "@date-io/moment";
 import { DatePicker } from "@material-ui/pickers";
 
 export default class AddressSection extends React.Component {
@@ -142,7 +140,7 @@ export default class AddressSection extends React.Component {
     }
     
     editbirthday = (value) => {
-        this.setState({birthday: value});
+        this.setState({birthday: value.toString()});
     }
 
     editmotherName = (value) => {
@@ -188,57 +186,54 @@ export default class AddressSection extends React.Component {
         const isMobile = width <= 1000;
 
         return (
-            <MuiPickersUtilsProvider utils={MomentUtils}>
-                <div className="whole-width">
-                    <h2 className="label-field-container">Dados pessoais</h2>
-                    <div className="text-field-container">
-                        <TextField
-                            error={!Validations.validfullName}
-                            helperText={!Validations.validfullName && Validations.fullNameFeedback}
-                            className="text-field"
-                            label="Nome"
-                            value={fullName}
-                            onChange={(e) => this.editName(e.target.value)}
-                        />
-                        <TextField 
-                            error={!Validations.validdocument}
-                            helperText={!Validations.validdocument && Validations.documentFeedback}
-                            className="text-field"
-                            label="Cpf"
-                            value={document}
-                            onChange={(e) => this.editdocument(e.target.value)}
-                        />
-                        <DatePicker
-                            label="Data de nascimento"
-                            className="text-field"
-                            value={birthday}
-                            onChange={this.editbirthday}
-                            format="DD/MM/YYYY"
-                            autoOk
-                            disableFuture
-                            animateYearScrolling
-                            disableToolbar={true}
-                            variant={!isMobile && "inline"}
-                        />
-                        <TextField
-                            error={!Validations.validmotherName}
-                            helperText={!Validations.validmotherName && Validations.motherNameFeedback}
-                            className="text-field"
-                            label="Nome da mãe"
-                            value={motherName}
-                            onChange={(e) => this.editmotherName(e.target.value)}
-                        />
-                        <TextField
-                            error={!Validations.validfatherName}
-                            helperText={!Validations.validfatherName && Validations.fatherNameFeedback}
-                            className="text-field"
-                            label="Nome do pai"
-                            value={fatherName}
-                            onChange={(e) => this.editfatherName(e.target.value)}
-                        />
-                    </div>
+            <div className="whole-width">
+                <h2 className="label-field-container">Dados pessoais</h2>
+                <div className="text-field-container">
+                    <TextField
+                        error={!Validations.validfullName}
+                        helperText={!Validations.validfullName && Validations.fullNameFeedback}
+                        className="text-field"
+                        label="Nome"
+                        value={fullName}
+                        onChange={(e) => this.editName(e.target.value)}
+                    />
+                    <TextField 
+                        error={!Validations.validdocument}
+                        helperText={!Validations.validdocument && Validations.documentFeedback}
+                        className="text-field"
+                        label="Cpf"
+                        value={document}
+                        onChange={(e) => this.editdocument(e.target.value)}
+                    />
+                    <DatePicker
+                        label="Data de nascimento"
+                        className="text-field"
+                        value={birthday}
+                        onChange={this.editbirthday}
+                        format="DD/MM/YYYY"
+                        autoOk
+                        disableFuture
+                        animateYearScrolling
+                        variant={!isMobile && "inline"}
+                    />
+                    <TextField
+                        error={!Validations.validmotherName}
+                        helperText={!Validations.validmotherName && Validations.motherNameFeedback}
+                        className="text-field"
+                        label="Nome da mãe"
+                        value={motherName}
+                        onChange={(e) => this.editmotherName(e.target.value)}
+                    />
+                    <TextField
+                        error={!Validations.validfatherName}
+                        helperText={!Validations.validfatherName && Validations.fatherNameFeedback}
+                        className="text-field"
+                        label="Nome do pai"
+                        value={fatherName}
+                        onChange={(e) => this.editfatherName(e.target.value)}
+                    />
                 </div>
-            </MuiPickersUtilsProvider>
+            </div>
         );
     }
 }

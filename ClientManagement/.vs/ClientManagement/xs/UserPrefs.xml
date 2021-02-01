@@ -1,22 +1,10 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Database/ApplicationDBContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infrastructure/Repositories/ClientRepository.cs">
     <Files>
-      <File FileName="Application/Services/ClientManagementService.cs" Line="44" Column="1" />
-      <File FileName="Domain/Services/ClientService.cs" />
-      <File FileName="Infrastructure/Repositories/ClientRepository.cs" />
-      <File FileName="Application/Dtos/ClientDto.cs" />
-      <File FileName="Domain/Interfaces/Services/IClientService.cs" />
-      <File FileName="Api/Program.cs" Line="1" Column="1" />
-      <File FileName="Api/Controllers/ClientManagementController.cs" />
-      <File FileName="Api/Startup.cs" Line="20" Column="31" />
-      <File FileName="Api/Dockerfile" />
-      <File FileName="Api/appsettings.json" />
-      <File FileName="Api/Properties/launchSettings.json" Line="19" Column="7" />
       <File FileName="Api/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Api/Configuration/AutoMapperConfiguration.cs" Line="13" Column="45" />
-      <File FileName="Application/AutoMapper/Configuration.cs" Line="6" Column="25" />
-      <File FileName="Infrastructure/Database/ApplicationDBContext.cs" Line="1" Column="1" />
+      <File FileName="Api/appsettings.json" Line="8" Column="30" />
+      <File FileName="Infrastructure/Repositories/ClientRepository.cs" Line="32" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -46,8 +34,9 @@
               <Node name="Data" expanded="True">
                 <Node name="Infra.Data" expanded="True">
                   <Node name="Configurations" expanded="True" />
-                  <Node name="Database" expanded="True">
-                    <Node name="ApplicationDBContext.cs" selected="True" />
+                  <Node name="Database" expanded="True" />
+                  <Node name="Repositories" expanded="True">
+                    <Node name="ClientRepository.cs" selected="True" />
                   </Node>
                 </Node>
               </Node>
@@ -68,6 +57,7 @@
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Services/ClientManagementService.cs" relfile="Application/Services/ClientManagementService.cs" line="44" column="13" />
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/Repositories/Base/BaseRepository.cs" relfile="Infrastructure/Repositories/Base/BaseRepository.cs" line="29" column="13" />
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/Services/ClientService.cs" relfile="Domain/Services/ClientService.cs" line="22" column="13" />
+      <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/Services/ClientService.cs" relfile="Domain/Services/ClientService.cs" line="48" column="13" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

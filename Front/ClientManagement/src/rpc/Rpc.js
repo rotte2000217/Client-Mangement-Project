@@ -40,22 +40,24 @@ export class Rpc {
     }
 
     static getResponse(promise) {
-        return new Promise((accept) => {
+        return new Promise((accept, reject) => {
             promise
                 .then((response) => {
                     if (response.status === 200) {
                         response
                             .json()
                             .then((body) => accept(body))
-                            .catch((error) => {
-                                console.log('getResponse - error (json response catch)', error);
+                            .catch(() => {
+                                accept({message: 'OK'});
                             });
                     } else {
                         console.log('getResponse - response status different of successful code');
+                        reject(undefined);
                     }
                 })
                 .catch((error) => {
                     console.log(error);
+                    reject(undefined);
                 });
         });
     }

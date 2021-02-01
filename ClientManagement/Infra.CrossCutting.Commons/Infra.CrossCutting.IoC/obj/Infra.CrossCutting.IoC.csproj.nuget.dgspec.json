@@ -14,7 +14,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -84,7 +84,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -136,7 +136,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -204,7 +204,7 @@
         "outputPath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/felixruan/.nuget/NuGet/NuGet.Config"
+          "/Users/felixruan/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"

@@ -23,7 +23,7 @@ export default class ContactModal extends React.Component {
         id: undefined,
         fullName: '',
         document: '',
-        birthday: moment().unix(),
+        birthday: moment('01/01/1980', 'DD/MM/YYYY').toString(),
         motherName: '',
         fatherName: '',
         emails: [],
@@ -43,7 +43,7 @@ export default class ContactModal extends React.Component {
   }
 
   saveClient = () => {
-    if (!this.isValidInput) {
+    if (!this.isValidInput()) {
       alert('Por favor corrija os campos antes de salvar');
     } else {
       if(!!this.props.selectedPersonSummary) {
@@ -87,7 +87,7 @@ export default class ContactModal extends React.Component {
     const clientInfo = await Api.createClient(this.getClientInfo());
     if (!!clientInfo) {
       this.setState({...this.state, loading: false});
-      this.props.addToList(clientInfo);
+      this.props.addToList();
       this.props.closeModal();
     } else {
       alert('Não foi possível salvar as informações do cliente.');
@@ -96,14 +96,12 @@ export default class ContactModal extends React.Component {
   }
 
   async updateClient() {
-    const { updateList, closeModal } = this.props;
-
     this.setState({...this.state, loading: true});
     const clientInfo = this.getClientInfo()
     const response = await Api.updateClient(clientInfo);
     if (!!response) {
-      updateList(clientInfo);
-      closeModal();
+      this.props.addToList();
+      this.props.closeModal();
     } else {
       alert('Não foi possível salvar as informações do cliente.');
     }

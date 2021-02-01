@@ -41,6 +41,10 @@ namespace Domain.Services
             client.Emails.ForEach(x => clientDB.Emails.Add(x));
             client.Addresses.ForEach(x => clientDB.Addresses.Add(x));
             client.Phones.ForEach(x => clientDB.Phones.Add(x));
+            clientDB.Birthday = client.Birthday;
+            clientDB.Document = client.Document;
+            clientDB.FullName = client.FullName;
+            clientDB.MotherName = client.MotherName;
             _repository.Update(clientDB);
         }
 

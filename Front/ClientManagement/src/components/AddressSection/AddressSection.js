@@ -125,7 +125,7 @@ export default class AddressSection extends React.Component {
 
         let isValid = true;
         let newData = Data;
-        newData[index].Address.streetNumber = value;
+        newData[index].Address.streetNumber = parseInt(value.replace(/\D/g, ''));
         
         if (value === '') {
             isValid = false;
