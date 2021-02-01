@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{153FD80A-E68D-4768-A5C4-BC581F136F00}|ContactManager">
   <MonoDevelop.Ide.ItemProperties.1_220-_220Presentation.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Api/Dockerfile">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Api/Properties/launchSettings.json">
     <Files>
       <File FileName="Application/Services/ClientManagementService.cs" Line="44" Column="1" />
       <File FileName="Domain/Services/ClientService.cs" />
@@ -10,7 +10,9 @@
       <File FileName="Api/Program.cs" />
       <File FileName="Api/Controllers/ClientManagementController.cs" />
       <File FileName="Api/Startup.cs" />
-      <File FileName="Api/Dockerfile" Line="27" Column="1" />
+      <File FileName="Api/Dockerfile" />
+      <File FileName="Api/appsettings.json" />
+      <File FileName="Api/Properties/launchSettings.json" Line="19" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +20,10 @@
           <Option id="ShowVersionControlOverlays" value="False" />
           <Node name="ClientManagement" expanded="True">
             <Node name="1 - Presentation" expanded="True">
-              <Node name="Api" expanded="True" selected="True" />
+              <Node name="Api" expanded="True" selected="True">
+                <Node name="Properties" expanded="True" />
+                <Node name="appsettings.json" expanded="True" />
+              </Node>
             </Node>
             <Node name="2 - Application" expanded="True">
               <Node name="Application" expanded="True">
@@ -38,7 +43,6 @@
     <String>docker-compose.dcproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/felixruan/Desktop/ClientProject/ClientManagement/Application/Services/ClientManagementService.cs" relfile="Application/Services/ClientManagementService.cs" line="50" column="13" />

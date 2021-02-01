@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Soo1yEHd1yYyJF54kEeJmfygbfLzgsmTZEh1nzOb+QVyKPIZ0ryv9wAMafy5jgxyiaqO1ry9q5IXSMwGXpVYVA==",
+  "dgSpecHash": "QmSLoiN4/zdkVWZIPmMd1dLU+tKr/VzKQlk7WNu1dIy2xnrqJxLCfssH1ygf1z32MAdZ68nyKEK3PoKp8blV3g==",
   "success": true,
   "projectFilePath": "/Users/felixruan/Desktop/ClientProject/ClientManagement/Infra.CrossCutting.Commons/Infra.CrossCutting.IoC/Infra.CrossCutting.IoC.csproj",
   "expectedPackageFiles": [

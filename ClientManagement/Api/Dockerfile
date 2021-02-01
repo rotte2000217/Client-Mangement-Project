@@ -6,7 +6,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
-WORKDIR /ClientManagement
+WORKDIR /src
 COPY Api/Api.csproj Api/
 COPY Application/Application.csproj Application/
 COPY Infrastructure/Infra.Data.csproj Infrastructure/
